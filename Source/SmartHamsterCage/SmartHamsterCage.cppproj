@@ -107,6 +107,7 @@
         </avrgcccpp.assembler.general.IncludePaths>
       </AvrGccCpp>
     </ToolchainSettings>
+    <PostBuildEvent>xcopy /s "$(OutputDirectory)\*" "$(SolutionDir)Build\" /Y</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -164,6 +165,7 @@
         <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
       </AvrGccCpp>
     </ToolchainSettings>
+    <PostBuildEvent>xcopy /s "$(OutputDirectory)\*" "$(SolutionDir)Build\" /Y</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="main.cpp">
