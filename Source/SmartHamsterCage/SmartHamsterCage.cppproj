@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>Source</AssemblyName>
-    <Name>Source</Name>
-    <RootNamespace>Source</RootNamespace>
+    <AssemblyName>SmartHamsterCage</AssemblyName>
+    <Name>SmartHamsterCage</Name>
+    <RootNamespace>SmartHamsterCage</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
