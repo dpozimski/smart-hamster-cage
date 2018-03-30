@@ -36,3 +36,5 @@
 
 #Dirs
 .vs/
+Debug/
+Release/
