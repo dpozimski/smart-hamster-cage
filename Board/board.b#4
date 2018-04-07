@@ -3496,10 +3496,13 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="R" x="-45.72" y="-417.83" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" package="DO41-7.6" package3d_urn="urn:adsk.eagle:package:43421/1" value="1N5824" x="-45.72" y="-433.07"/>
+<element name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nF" x="-50.8" y="-448.31">
+<attribute name="SPICEPREFIX" value="C" x="-50.8" y="-448.31" size="1.778" layer="27" display="off"/>
+</element>
+<element name="C7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="E5-10,5" package3d_urn="urn:adsk.eagle:package:25854/1" value="10uF" x="-43.18" y="-468.63"/>
 </elements>
 <signals>
 <signal name="GND">
-<contactref element="IC1" pad="2"/>
 <contactref element="LM2596" pad="3"/>
 <contactref element="C1" pad="-"/>
 <contactref element="D1" pad="A"/>
@@ -3520,6 +3523,12 @@ design rules under a new name.</description>
 <contactref element="C5" pad="2"/>
 <contactref element="D3" pad="A"/>
 <contactref element="X1" pad="1"/>
+<contactref element="IC1" pad="11"/>
+<contactref element="IC1" pad="13"/>
+<contactref element="IC1" pad="14"/>
+<contactref element="IC1" pad="2"/>
+<contactref element="C7" pad="-"/>
+<contactref element="C6" pad="2"/>
 <wire x1="-49.53" y1="-181.61" x2="-49.53" y2="-195.58" width="0" layer="19" extent="1-1"/>
 <wire x1="-49.53" y1="-167.64" x2="-49.53" y2="-181.61" width="0" layer="19" extent="1-1"/>
 <wire x1="-40.64" y1="-151.13" x2="-49.53" y2="-167.64" width="0" layer="19" extent="1-1"/>
@@ -3533,16 +3542,20 @@ design rules under a new name.</description>
 <wire x1="-19.05" y1="10.16" x2="-19.05" y2="1.8288" width="0" layer="19" extent="1-1"/>
 <wire x1="-17.78" y1="18.06" x2="-19.05" y2="10.16" width="0" layer="19" extent="1-1"/>
 <wire x1="-20.78" y1="22.86" x2="-17.78" y2="18.06" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="33.02" x2="-20.78" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="-20.32" y1="40.64" x2="-20.78" y2="22.86" width="0" layer="19" extent="1-1"/>
+<wire x1="-22.86" y1="40.64" x2="-20.32" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.24" y1="40.64" x2="-20.32" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.56" y1="33.02" x2="-22.86" y2="40.64" width="0" layer="19" extent="1-1"/>
 <wire x1="-41.91" y1="-320.04" x2="-48.1838" y2="-232.41" width="0" layer="19" extent="1-1"/>
 <wire x1="-43.7388" y1="-354.0506" x2="-41.91" y2="-320.04" width="0" layer="19" extent="1-1"/>
 <wire x1="-50.2412" y1="-354.0506" x2="-43.7388" y2="-354.0506" width="0" layer="19" extent="1-1"/>
 <wire x1="-49.53" y1="-368.3" x2="-50.2412" y2="-354.0506" width="0" layer="19" extent="1-1"/>
 <wire x1="-48.2346" y1="-384.81" x2="-49.53" y2="-368.3" width="0" layer="19" extent="1-1"/>
 <wire x1="-41.91" y1="-433.07" x2="-48.2346" y2="-384.81" width="0" layer="19" extent="1-1"/>
+<wire x1="-49.53" y1="-448.31" x2="-41.91" y2="-433.07" width="0" layer="19" extent="1-1"/>
+<wire x1="-40.64" y1="-468.63" x2="-49.53" y2="-448.31" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
-<contactref element="IC1" pad="12"/>
 <contactref element="L1" pad="2"/>
 <contactref element="C2" pad="+"/>
 <contactref element="LM2596" pad="4"/>
@@ -3553,6 +3566,11 @@ design rules under a new name.</description>
 <contactref element="KANDA" pad="2"/>
 <contactref element="OLED_SSD3306_CON" pad="1"/>
 <contactref element="R2" pad="2"/>
+<contactref element="IC1" pad="12"/>
+<contactref element="IC1" pad="20"/>
+<contactref element="IC1" pad="15"/>
+<contactref element="C6" pad="1"/>
+<contactref element="C7" pad="+"/>
 <wire x1="-52.07" y1="-181.61" x2="-52.07" y2="-195.58" width="0" layer="19" extent="1-1"/>
 <wire x1="-52.07" y1="-167.64" x2="-52.07" y2="-181.61" width="0" layer="19" extent="1-1"/>
 <wire x1="-50.8" y1="-151.13" x2="-52.07" y2="-167.64" width="0" layer="19" extent="1-1"/>
@@ -3562,7 +3580,11 @@ design rules under a new name.</description>
 <wire x1="-47.095" y1="-78.74" x2="-45.72" y2="-101.6" width="0" layer="19" extent="1-1"/>
 <wire x1="-17.3482" y1="1.8288" x2="-47.095" y2="-78.74" width="0" layer="19" extent="1-1"/>
 <wire x1="-17.78" y1="40.64" x2="-17.3482" y2="1.8288" width="0" layer="19" extent="1-1"/>
+<wire x1="-25.4" y1="40.64" x2="-17.78" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="-38.1" y1="40.64" x2="-25.4" y2="40.64" width="0" layer="19" extent="1-1"/>
 <wire x1="-39.37" y1="-335.28" x2="-52.07" y2="-195.58" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-448.31" x2="-39.37" y2="-335.28" width="0" layer="19" extent="1-1"/>
+<wire x1="-45.72" y1="-468.63" x2="-52.07" y2="-448.31" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="J1" pad="3"/>
@@ -3610,13 +3632,13 @@ design rules under a new name.</description>
 </signal>
 <signal name="OLED_RST">
 <contactref element="OLED_SSD3306_CON" pad="8"/>
-<contactref element="IC2" pad="20"/>
-<wire x1="-3.81" y1="-137.16" x2="-34.29" y2="-195.58" width="0" layer="19" extent="1-1"/>
+<contactref element="IC2" pad="25"/>
+<wire x1="-13.97" y1="-121.92" x2="-34.29" y2="-195.58" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OLED_SA">
 <contactref element="OLED_SSD3306_CON" pad="7"/>
-<contactref element="IC2" pad="21"/>
-<wire x1="-3.81" y1="-121.92" x2="-36.83" y2="-195.58" width="0" layer="19" extent="1-1"/>
+<contactref element="IC2" pad="24"/>
+<wire x1="-11.43" y1="-121.92" x2="-36.83" y2="-195.58" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="KANDA" pad="1"/>
@@ -3669,6 +3691,51 @@ design rules under a new name.</description>
 <contactref element="D3" pad="C"/>
 <wire x1="-52.07" y1="-403.86" x2="-49.53" y2="-433.07" width="0" layer="19" extent="1-1"/>
 <wire x1="-43.2054" y1="-384.81" x2="-52.07" y2="-403.86" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$12">
+<contactref element="IC2" pad="21"/>
+<contactref element="R3" pad="1"/>
+<wire x1="-3.81" y1="-121.92" x2="-52.07" y2="-417.83" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$13">
+<contactref element="IC1" pad="9"/>
+<contactref element="X3" pad="1"/>
+<wire x1="-17.78" y1="33.02" x2="-48.2346" y2="-252.73" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$14">
+<contactref element="IC1" pad="7"/>
+<contactref element="X3" pad="2"/>
+<wire x1="-22.86" y1="33.02" x2="-43.2054" y2="-252.73" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$15">
+<contactref element="IC1" pad="6"/>
+<contactref element="X4" pad="1"/>
+<wire x1="-25.4" y1="33.02" x2="-48.2346" y2="-273.05" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$16">
+<contactref element="IC1" pad="4"/>
+<contactref element="X4" pad="2"/>
+<wire x1="-30.48" y1="33.02" x2="-43.2054" y2="-273.05" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$17">
+<contactref element="IC2" pad="40"/>
+<contactref element="IC1" pad="16"/>
+<wire x1="-27.94" y1="40.64" x2="-52.07" y2="-121.92" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$18">
+<contactref element="IC2" pad="39"/>
+<contactref element="IC1" pad="17"/>
+<wire x1="-30.48" y1="40.64" x2="-49.53" y2="-121.92" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$19">
+<contactref element="IC2" pad="38"/>
+<contactref element="IC1" pad="18"/>
+<wire x1="-33.02" y1="40.64" x2="-46.99" y2="-121.92" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$20">
+<contactref element="IC1" pad="19"/>
+<contactref element="IC2" pad="37"/>
+<wire x1="-35.56" y1="40.64" x2="-44.45" y2="-121.92" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
