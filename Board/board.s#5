@@ -19855,9 +19855,9 @@ grid 2.54 mm</description>
 <wire x1="-35.56" y1="35.56" x2="-25.4" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="35.56" x2="-25.4" y2="-162.56" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="-162.56" x2="81.28" y2="-162.56" width="0.1524" layer="91"/>
-<wire x1="81.28" y1="-162.56" x2="81.28" y2="-154.94" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="L297" pin="OSC"/>
-<wire x1="81.28" y1="-154.94" x2="104.14" y2="-154.94" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="-162.56" x2="81.28" y2="-157.48" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="L297" pin="CW/CCW"/>
+<wire x1="81.28" y1="-157.48" x2="104.14" y2="-157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
@@ -19866,9 +19866,9 @@ grid 2.54 mm</description>
 <wire x1="-35.56" y1="38.1" x2="-22.86" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="38.1" x2="-22.86" y2="-165.1" width="0.1524" layer="91"/>
 <wire x1="-22.86" y1="-165.1" x2="83.82" y2="-165.1" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="-165.1" x2="83.82" y2="-157.48" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="L297" pin="CW/CCW"/>
-<wire x1="83.82" y1="-157.48" x2="104.14" y2="-157.48" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="L297" pin="CLOCK"/>
+<wire x1="104.14" y1="-160.02" x2="83.82" y2="-160.02" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="-160.02" x2="83.82" y2="-165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -19877,9 +19877,9 @@ grid 2.54 mm</description>
 <wire x1="-35.56" y1="40.64" x2="-20.32" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="40.64" x2="-20.32" y2="-167.64" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="-167.64" x2="86.36" y2="-167.64" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="-167.64" x2="86.36" y2="-160.02" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="L297" pin="CLOCK"/>
-<wire x1="86.36" y1="-160.02" x2="104.14" y2="-160.02" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="-167.64" x2="86.36" y2="-165.1" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="L297" pin="ENABLE"/>
+<wire x1="86.36" y1="-165.1" x2="104.14" y2="-165.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -21263,6 +21263,76 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="MCP9808">
+<packages>
+<package name="MSOP-8">
+<wire x1="-1.5" y1="1.5" x2="-1.5" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-1.5" x2="1.5" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="1.5" x2="-1.5" y2="1.5" width="0.127" layer="21"/>
+<circle x="-0.9" y="0.9" radius="0.3" width="0.127" layer="21"/>
+<text x="-2.548890625" y="1.911659375" size="1.019559375" layer="25">&gt;NAME</text>
+<text x="-2.54626875" y="-2.928209375" size="1.0185" layer="27">&gt;VALUE</text>
+<smd name="1" x="-2.2" y="0.975" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="2" x="-2.2" y="0.325" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="3" x="-2.2" y="-0.325" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="4" x="-2.2" y="-0.975" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="5" x="2.2" y="-0.975" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="6" x="2.2" y="-0.325" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="7" x="2.2" y="0.325" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+<smd name="8" x="2.2" y="0.975" dx="0.45" dy="1.45" layer="1" rot="R270"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MCP9808">
+<wire x1="-10.16" y1="-10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="-10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<text x="-10.1759" y="10.9391" size="1.780790625" layer="95">&gt;NAME</text>
+<text x="-10.1847" y="-12.7309" size="1.78233125" layer="96">&gt;VALUE</text>
+<pin name="SDA" x="15.24" y="7.62" length="middle" direction="in" rot="R180"/>
+<pin name="SCL" x="15.24" y="5.08" length="middle" function="clk" rot="R180"/>
+<pin name="ALERT" x="15.24" y="-7.62" length="middle" direction="out" rot="R180"/>
+<pin name="VDD" x="-15.24" y="7.62" length="middle" direction="pwr"/>
+<pin name="GND" x="-15.24" y="-7.62" length="middle" direction="pwr"/>
+<pin name="A0" x="-15.24" y="2.54" length="middle" direction="in"/>
+<pin name="A1" x="-15.24" y="0" length="middle" direction="in"/>
+<pin name="A2" x="-15.24" y="-2.54" length="middle" direction="in"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MCP9808" prefix="U">
+<gates>
+<gate name="G$1" symbol="MCP9808" x="0" y="0"/>
+</gates>
+<devices>
+<device name="MSOP" package="MSOP-8">
+<connects>
+<connect gate="G$1" pin="A0" pad="7"/>
+<connect gate="G$1" pin="A1" pad="6"/>
+<connect gate="G$1" pin="A2" pad="5"/>
+<connect gate="G$1" pin="ALERT" pad="3"/>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="SCL" pad="2"/>
+<connect gate="G$1" pin="SDA" pad="1"/>
+<connect gate="G$1" pin="VDD" pad="8"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="Good"/>
+<attribute name="DESCRIPTION" value=" MCP9808 Series SMD 3.6 V Memory Module Digital Temperature Sensor - MSOP-8 "/>
+<attribute name="MF" value="Microchip"/>
+<attribute name="MP" value="MCP9808-E/MS"/>
+<attribute name="PACKAGE" value="MSOP-8 Microchip"/>
+<attribute name="PRICE" value="1.04 USD"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -21377,6 +21447,11 @@ Source: www.kingbright.com</description>
 <part name="P+12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 <part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/12" package3d_urn="urn:adsk.eagle:package:23489/1" value="470R"/>
 <part name="WP_LED" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="3MM" package3d_urn="urn:adsk.eagle:package:15797/1"/>
+<part name="U1" library="MCP9808" deviceset="MCP9808" device="MSOP"/>
+<part name="SUPPLY26" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2" value="100nF"/>
+<part name="SUPPLY27" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="P+14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -21410,9 +21485,9 @@ Source: www.kingbright.com</description>
 <instance part="P+3" gate="VCC" x="-88.9" y="43.18"/>
 <instance part="P+4" gate="VCC" x="129.54" y="76.2"/>
 <instance part="SUPPLY9" gate="GND" x="129.54" y="45.72"/>
-<instance part="OLED_SSD3306_CON" gate="G$1" x="33.02" y="-45.72" rot="R180"/>
-<instance part="P+5" gate="VCC" x="20.32" y="-22.86"/>
-<instance part="SUPPLY10" gate="GND" x="20.32" y="-68.58"/>
+<instance part="OLED_SSD3306_CON" gate="G$1" x="-119.38" y="-86.36"/>
+<instance part="P+5" gate="VCC" x="-78.74" y="-81.28"/>
+<instance part="SUPPLY10" gate="GND" x="-81.28" y="-99.06"/>
 <instance part="X2" gate="-1" x="127" y="-2.54" rot="R180"/>
 <instance part="X2" gate="-2" x="127" y="2.54" rot="R180"/>
 <instance part="X2" gate="-3" x="127" y="7.62" rot="R180"/>
@@ -21492,6 +21567,11 @@ Source: www.kingbright.com</description>
 <instance part="P+12" gate="VCC" x="111.76" y="-25.4"/>
 <instance part="R14" gate="G$1" x="111.76" y="-50.8" rot="R270"/>
 <instance part="WP_LED" gate="G$1" x="111.76" y="-38.1" rot="R180"/>
+<instance part="U1" gate="G$1" x="-127" y="-132.08"/>
+<instance part="SUPPLY26" gate="GND" x="-147.32" y="-147.32"/>
+<instance part="C8" gate="G$1" x="-157.48" y="-134.62"/>
+<instance part="SUPPLY27" gate="GND" x="-157.48" y="-147.32"/>
+<instance part="P+14" gate="VCC" x="-157.48" y="-111.76"/>
 </instances>
 <busses>
 </busses>
@@ -21610,9 +21690,9 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="OLED_SSD3306_CON" gate="G$1" pin="2"/>
-<wire x1="25.4" y1="-40.64" x2="20.32" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="-111.76" y1="-91.44" x2="-81.28" y2="-91.44" width="0.1524" layer="91"/>
 <pinref part="SUPPLY10" gate="GND" pin="GND"/>
-<wire x1="20.32" y1="-40.64" x2="20.32" y2="-66.04" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="-91.44" x2="-81.28" y2="-96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="SUPPLY11" gate="GND" pin="GND"/>
@@ -21738,6 +21818,29 @@ Source: www.kingbright.com</description>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="-27.94" x2="48.26" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="GND"/>
+<wire x1="-142.24" y1="-139.7" x2="-147.32" y2="-139.7" width="0.1524" layer="91"/>
+<pinref part="SUPPLY26" gate="GND" pin="GND"/>
+<wire x1="-147.32" y1="-139.7" x2="-147.32" y2="-144.78" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="A2"/>
+<wire x1="-142.24" y1="-134.62" x2="-147.32" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="-147.32" y1="-134.62" x2="-147.32" y2="-139.7" width="0.1524" layer="91"/>
+<junction x="-147.32" y="-139.7"/>
+<pinref part="U1" gate="G$1" pin="A1"/>
+<wire x1="-142.24" y1="-132.08" x2="-147.32" y2="-132.08" width="0.1524" layer="91"/>
+<wire x1="-147.32" y1="-132.08" x2="-147.32" y2="-134.62" width="0.1524" layer="91"/>
+<junction x="-147.32" y="-134.62"/>
+<pinref part="U1" gate="G$1" pin="A0"/>
+<wire x1="-142.24" y1="-129.54" x2="-147.32" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="-147.32" y1="-129.54" x2="-147.32" y2="-132.08" width="0.1524" layer="91"/>
+<junction x="-147.32" y="-132.08"/>
+</segment>
+<segment>
+<pinref part="C8" gate="G$1" pin="2"/>
+<pinref part="SUPPLY27" gate="GND" pin="GND"/>
+<wire x1="-157.48" y1="-139.7" x2="-157.48" y2="-144.78" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -21790,9 +21893,9 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="P+5" gate="VCC" pin="VCC"/>
-<wire x1="20.32" y1="-25.4" x2="20.32" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="-83.82" x2="-78.74" y2="-93.98" width="0.1524" layer="91"/>
 <pinref part="OLED_SSD3306_CON" gate="G$1" pin="1"/>
-<wire x1="20.32" y1="-38.1" x2="25.4" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="-78.74" y1="-93.98" x2="-111.76" y2="-93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+6" gate="VCC" pin="VCC"/>
@@ -21852,6 +21955,15 @@ Source: www.kingbright.com</description>
 <pinref part="P+12" gate="VCC" pin="VCC"/>
 <wire x1="111.76" y1="-33.02" x2="111.76" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="VDD"/>
+<wire x1="-142.24" y1="-124.46" x2="-157.48" y2="-124.46" width="0.1524" layer="91"/>
+<pinref part="C8" gate="G$1" pin="1"/>
+<wire x1="-157.48" y1="-124.46" x2="-157.48" y2="-132.08" width="0.1524" layer="91"/>
+<pinref part="P+14" gate="VCC" pin="VCC"/>
+<wire x1="-157.48" y1="-114.3" x2="-157.48" y2="-124.46" width="0.1524" layer="91"/>
+<junction x="-157.48" y="-124.46"/>
+</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
@@ -21860,46 +21972,6 @@ Source: www.kingbright.com</description>
 <pinref part="KANDA" gate="G$1" pin="9"/>
 <wire x1="5.08" y1="27.94" x2="5.08" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="55.88" x2="106.68" y2="55.88" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="SDA" class="0">
-<segment>
-<pinref part="IC2" gate="G$1" pin="(SDA)PC1"/>
-<wire x1="-35.56" y1="-7.62" x2="17.78" y2="-7.62" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="-7.62" x2="17.78" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="OLED_SSD3306_CON" gate="G$1" pin="4"/>
-<wire x1="17.78" y1="-45.72" x2="25.4" y2="-45.72" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="SCL" class="0">
-<segment>
-<pinref part="OLED_SSD3306_CON" gate="G$1" pin="5"/>
-<wire x1="25.4" y1="-48.26" x2="15.24" y2="-48.26" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="(SCL)PC0"/>
-<wire x1="15.24" y1="-48.26" x2="15.24" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="-10.16" x2="-35.56" y2="-10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="OLED_RST" class="0">
-<segment>
-<pinref part="OLED_SSD3306_CON" gate="G$1" pin="8"/>
-<wire x1="25.4" y1="-55.88" x2="7.62" y2="-55.88" width="0.1524" layer="91"/>
-<wire x1="7.62" y1="-55.88" x2="7.62" y2="-15.24" width="0.1524" layer="91"/>
-<wire x1="7.62" y1="-15.24" x2="-27.94" y2="-15.24" width="0.1524" layer="91"/>
-<wire x1="-27.94" y1="-15.24" x2="-27.94" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="(TMS)PC3"/>
-<wire x1="-27.94" y1="-2.54" x2="-35.56" y2="-2.54" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="OLED_SA" class="0">
-<segment>
-<pinref part="OLED_SSD3306_CON" gate="G$1" pin="7"/>
-<wire x1="25.4" y1="-53.34" x2="10.16" y2="-53.34" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="-53.34" x2="10.16" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="-12.7" x2="-30.48" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="-30.48" y1="-12.7" x2="-30.48" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="(TCK)PC2"/>
-<wire x1="-30.48" y1="-5.08" x2="-35.56" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -22258,6 +22330,69 @@ Source: www.kingbright.com</description>
 <pinref part="R14" gate="G$1" pin="1"/>
 <pinref part="WP_LED" gate="G$1" pin="A"/>
 <wire x1="111.76" y1="-45.72" x2="111.76" y2="-40.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$35" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="(SDA)PC1"/>
+<wire x1="-35.56" y1="-7.62" x2="-5.08" y2="-7.62" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="-7.62" x2="-5.08" y2="-55.88" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="-55.88" x2="-83.82" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="OLED_SSD3306_CON" gate="G$1" pin="4"/>
+<wire x1="-83.82" y1="-86.36" x2="-111.76" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="-55.88" x2="-83.82" y2="-86.36" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="SDA"/>
+<wire x1="-83.82" y1="-86.36" x2="-83.82" y2="-124.46" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="-124.46" x2="-111.76" y2="-124.46" width="0.1524" layer="91"/>
+<junction x="-83.82" y="-86.36"/>
+</segment>
+</net>
+<net name="N$36" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="(SCL)PC0"/>
+<wire x1="-35.56" y1="-10.16" x2="-7.62" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="-53.34" x2="-86.36" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="OLED_SSD3306_CON" gate="G$1" pin="5"/>
+<wire x1="-86.36" y1="-53.34" x2="-86.36" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="-86.36" y1="-83.82" x2="-111.76" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="-86.36" y1="-83.82" x2="-86.36" y2="-127" width="0.1524" layer="91"/>
+<junction x="-86.36" y="-83.82"/>
+<pinref part="U1" gate="G$1" pin="SCL"/>
+<wire x1="-86.36" y1="-127" x2="-111.76" y2="-127" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$37" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="(TCK)PC2"/>
+<wire x1="-35.56" y1="-5.08" x2="-2.54" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="-58.42" x2="-88.9" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="-58.42" x2="-88.9" y2="-81.28" width="0.1524" layer="91"/>
+<pinref part="OLED_SSD3306_CON" gate="G$1" pin="6"/>
+<wire x1="-88.9" y1="-81.28" x2="-111.76" y2="-81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$38" class="0">
+<segment>
+<pinref part="OLED_SSD3306_CON" gate="G$1" pin="7"/>
+<wire x1="-111.76" y1="-78.74" x2="-91.44" y2="-78.74" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="-78.74" x2="-91.44" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="-91.44" y1="-60.96" x2="0" y2="-60.96" width="0.1524" layer="91"/>
+<wire x1="0" y1="-60.96" x2="0" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="(TMS)PC3"/>
+<wire x1="0" y1="-2.54" x2="-35.56" y2="-2.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$39" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="(TDO)PC4"/>
+<wire x1="-35.56" y1="0" x2="2.54" y2="0" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="0" x2="2.54" y2="-63.5" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="-63.5" x2="-93.98" y2="-63.5" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="-63.5" x2="-93.98" y2="-76.2" width="0.1524" layer="91"/>
+<pinref part="OLED_SSD3306_CON" gate="G$1" pin="8"/>
+<wire x1="-93.98" y1="-76.2" x2="-111.76" y2="-76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
