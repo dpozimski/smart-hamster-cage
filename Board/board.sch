@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -17633,6 +17633,9 @@ Source: www.kingbright.com</description>
 <part name="D8" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
 <part name="D9" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
 <part name="D10" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
+<part name="SUPPLY28" library="supply2" deviceset="GND" device=""/>
+<part name="C9" library="rcl" deviceset="C-EU" device="025-025X050" value="100nF"/>
+<part name="C10" library="resistor" deviceset="CPOL-EU" device="E5-10.5" value="22uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -17700,7 +17703,7 @@ Source: www.kingbright.com</description>
 <instance part="IC3" gate="L298" x="236.22" y="-167.64"/>
 <instance part="SUPPLY17" gate="GND" x="215.9" y="-198.12"/>
 <instance part="SUPPLY18" gate="GND" x="256.54" y="-198.12"/>
-<instance part="VSS5" gate="G$1" x="256.54" y="-124.46" rot="R180"/>
+<instance part="VSS5" gate="G$1" x="256.54" y="-104.14" rot="R180"/>
 <instance part="X5" gate="-1" x="330.2" y="-172.72" rot="R180"/>
 <instance part="X5" gate="-2" x="330.2" y="-167.64" rot="R180"/>
 <instance part="X6" gate="-1" x="330.2" y="-160.02" rot="R180"/>
@@ -17728,6 +17731,9 @@ Source: www.kingbright.com</description>
 <instance part="D8" gate="G$1" x="274.32" y="-187.96" rot="R90"/>
 <instance part="D9" gate="G$1" x="284.48" y="-187.96" rot="R90"/>
 <instance part="D10" gate="G$1" x="294.64" y="-187.96" rot="R90"/>
+<instance part="SUPPLY28" gate="GND" x="241.3" y="-137.16"/>
+<instance part="C9" gate="G$1" x="226.06" y="-119.38"/>
+<instance part="C10" gate="G$1" x="241.3" y="-119.38"/>
 </instances>
 <busses>
 </busses>
@@ -17757,8 +17763,9 @@ Source: www.kingbright.com</description>
 </segment>
 <segment>
 <pinref part="VSS5" gate="G$1" pin="VSS"/>
-<wire x1="256.54" y1="-127" x2="256.54" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="-106.68" x2="256.54" y2="-111.76" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="L298" pin="VS"/>
+<wire x1="256.54" y1="-111.76" x2="256.54" y2="-129.54" width="0.1524" layer="91"/>
 <wire x1="256.54" y1="-129.54" x2="256.54" y2="-152.4" width="0.1524" layer="91"/>
 <wire x1="256.54" y1="-152.4" x2="251.46" y2="-152.4" width="0.1524" layer="91"/>
 <wire x1="256.54" y1="-129.54" x2="264.16" y2="-129.54" width="0.1524" layer="91"/>
@@ -17777,6 +17784,14 @@ Source: www.kingbright.com</description>
 <junction x="284.48" y="-129.54"/>
 <pinref part="D6" gate="G$1" pin="C"/>
 <wire x1="294.64" y1="-129.54" x2="294.64" y2="-144.78" width="0.1524" layer="91"/>
+<pinref part="C9" gate="G$1" pin="1"/>
+<wire x1="226.06" y1="-116.84" x2="226.06" y2="-111.76" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="-111.76" x2="241.3" y2="-111.76" width="0.1524" layer="91"/>
+<pinref part="C10" gate="G$1" pin="+"/>
+<wire x1="241.3" y1="-111.76" x2="241.3" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="241.3" y1="-111.76" x2="256.54" y2="-111.76" width="0.1524" layer="91"/>
+<junction x="241.3" y="-111.76"/>
+<junction x="256.54" y="-111.76"/>
 </segment>
 <segment>
 <pinref part="VSS4" gate="G$1" pin="VSS"/>
@@ -17996,6 +18011,16 @@ Source: www.kingbright.com</description>
 <pinref part="D10" gate="G$1" pin="A"/>
 <pinref part="SUPPLY24" gate="GND" pin="GND"/>
 <wire x1="294.64" y1="-190.5" x2="294.64" y2="-195.58" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY28" gate="GND" pin="GND"/>
+<wire x1="241.3" y1="-124.46" x2="241.3" y2="-129.54" width="0.1524" layer="91"/>
+<pinref part="C10" gate="G$1" pin="-"/>
+<pinref part="C9" gate="G$1" pin="2"/>
+<wire x1="241.3" y1="-129.54" x2="241.3" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="-124.46" x2="226.06" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="-129.54" x2="241.3" y2="-129.54" width="0.1524" layer="91"/>
+<junction x="241.3" y="-129.54"/>
 </segment>
 </net>
 <net name="N$2" class="0">
