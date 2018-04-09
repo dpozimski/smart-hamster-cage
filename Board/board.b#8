@@ -3515,6 +3515,9 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="C" x="-99.06" y="-1018.54" size="1.778" layer="27" display="off"/>
 </element>
 <element name="C10" library="resistor" package="E5-10,5" value="22uF" x="-96.52" y="73.66"/>
+<element name="C11" library="rcl" package="C025-025X050" value="100nF" x="-99.06" y="-1018.54">
+<attribute name="SPICEPREFIX" value="C" x="-99.06" y="-1018.54" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -3561,6 +3564,7 @@ design rules under a new name.</description>
 <contactref element="D10" pad="A"/>
 <contactref element="C10" pad="-"/>
 <contactref element="C9" pad="2"/>
+<contactref element="C11" pad="2"/>
 <wire x1="-100.33" y1="-906.78" x2="-100.33" y2="-913.13" width="0" layer="19" extent="1-1"/>
 <wire x1="-100.33" y1="-925.83" x2="-100.33" y2="-913.13" width="0" layer="19" extent="1-1"/>
 <wire x1="-100.33" y1="-935.99" x2="-100.33" y2="-925.83" width="0" layer="19" extent="1-1"/>
@@ -3577,6 +3581,7 @@ design rules under a new name.</description>
 <wire x1="-92.71" y1="-995.68" x2="-92.71" y2="-988.06" width="0" layer="19" extent="1-1"/>
 <wire x1="-92.71" y1="-1003.3" x2="-92.71" y2="-995.68" width="0" layer="19" extent="1-1"/>
 <wire x1="-92.71" y1="-1010.92" x2="-92.71" y2="-1003.3" width="0" layer="19" extent="1-1"/>
+<wire x1="-97.79" y1="-1018.54" x2="-92.71" y2="-1010.92" width="0" layer="19" extent="1-1"/>
 <wire x1="-52.07" y1="-781.05" x2="-52.41" y2="-846.765" width="0" layer="19" extent="1-1"/>
 <wire x1="-40.64" y1="-468.63" x2="-52.07" y2="-781.05" width="0" layer="19" extent="1-1"/>
 <wire x1="-49.53" y1="-448.31" x2="-40.64" y2="-468.63" width="0" layer="19" extent="1-1"/>
@@ -3613,7 +3618,6 @@ design rules under a new name.</description>
 <contactref element="IC2" pad="30"/>
 <contactref element="C3" pad="1"/>
 <contactref element="KANDA" pad="2"/>
-<contactref element="OLED_SSD3306_CON" pad="1"/>
 <contactref element="R2" pad="2"/>
 <contactref element="IC1" pad="12"/>
 <contactref element="IC1" pad="20"/>
@@ -3623,6 +3627,8 @@ design rules under a new name.</description>
 <contactref element="U1" pad="8"/>
 <contactref element="C8" pad="1"/>
 <contactref element="IC3" pad="9"/>
+<contactref element="OLED_SSD3306_CON" pad="1"/>
+<contactref element="C11" pad="1"/>
 <wire x1="-52.07" y1="-181.61" x2="-52.07" y2="-195.58" width="0" layer="19" extent="1-1"/>
 <wire x1="-52.07" y1="-167.64" x2="-52.07" y2="-181.61" width="0" layer="19" extent="1-1"/>
 <wire x1="-50.8" y1="-151.13" x2="-52.07" y2="-167.64" width="0" layer="19" extent="1-1"/>
@@ -3640,6 +3646,7 @@ design rules under a new name.</description>
 <wire x1="-52.41" y1="-846.115" x2="-45.72" y2="-468.63" width="0" layer="19" extent="1-1"/>
 <wire x1="-52.07" y1="-857.25" x2="-52.41" y2="-846.115" width="0" layer="19" extent="1-1"/>
 <wire x1="-90.17" y1="-871.22" x2="-52.07" y2="-857.25" width="0" layer="19" extent="1-1"/>
+<wire x1="-100.33" y1="-1018.54" x2="-90.17" y2="-871.22" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="J1" pad="3"/>

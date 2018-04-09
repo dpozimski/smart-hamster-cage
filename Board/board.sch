@@ -17348,12 +17348,12 @@ Source: http://www.osram.convergy.de/</description>
 <part name="C10" library="resistor" deviceset="CPOL-EU" device="E5-10.5" value="22uF"/>
 <part name="C11" library="rcl" deviceset="C-EU" device="025-025X050" value="100nF"/>
 <part name="SUPPLY29" library="supply2" deviceset="GND" device=""/>
-<part name="VSS_LED" library="led" deviceset="LED" device="3MM"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="0207/12" value="470R"/>
 <part name="SUPPLY30" library="supply2" deviceset="GND" device=""/>
 <part name="WP_LED" library="led" deviceset="LED" device="5MM"/>
 <part name="FAN_LED" library="led" deviceset="LED" device="5MM"/>
 <part name="CTRL_LED" library="led" deviceset="LED" device="5MM"/>
+<part name="VSS_LED" library="led" deviceset="LED" device="5MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -17451,12 +17451,12 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="C10" gate="G$1" x="241.3" y="-119.38"/>
 <instance part="C11" gate="G$1" x="-73.66" y="-99.06"/>
 <instance part="SUPPLY29" gate="GND" x="-73.66" y="-109.22"/>
-<instance part="VSS_LED" gate="G$1" x="-45.72" y="134.62"/>
-<instance part="R3" gate="G$1" x="-45.72" y="116.84" rot="R90"/>
+<instance part="R3" gate="G$1" x="-45.72" y="129.54" rot="R90"/>
 <instance part="SUPPLY30" gate="GND" x="-45.72" y="104.14"/>
 <instance part="WP_LED" gate="G$1" x="457.2" y="-132.08"/>
 <instance part="FAN_LED" gate="G$1" x="457.2" y="-30.48"/>
 <instance part="CTRL_LED" gate="G$1" x="12.7" y="-27.94"/>
+<instance part="VSS_LED" gate="G$1" x="-45.72" y="116.84"/>
 </instances>
 <busses>
 </busses>
@@ -17478,8 +17478,8 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="-58.42" y1="142.24" x2="-58.42" y2="134.62" width="0.1524" layer="91"/>
 <junction x="-58.42" y="142.24"/>
 <wire x1="-58.42" y1="142.24" x2="-45.72" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="VSS_LED" gate="G$1" pin="A"/>
-<wire x1="-45.72" y1="142.24" x2="-45.72" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="R3" gate="G$1" pin="2"/>
+<wire x1="-45.72" y1="142.24" x2="-45.72" y2="134.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LM2596" gate="G$1" pin="IN"/>
@@ -17739,11 +17739,6 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="-73.66" y1="-104.14" x2="-73.66" y2="-106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SUPPLY30" gate="GND" pin="GND"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="-45.72" y1="106.68" x2="-45.72" y2="111.76" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="WP_LED" gate="G$1" pin="C"/>
 <pinref part="SUPPLY22" gate="GND" pin="GND"/>
 <wire x1="457.2" y1="-137.16" x2="457.2" y2="-144.78" width="0.1524" layer="91"/>
@@ -17757,6 +17752,11 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="CTRL_LED" gate="G$1" pin="C"/>
 <pinref part="SUPPLY25" gate="GND" pin="GND"/>
 <wire x1="12.7" y1="-33.02" x2="12.7" y2="-40.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="VSS_LED" gate="G$1" pin="C"/>
+<pinref part="SUPPLY30" gate="GND" pin="GND"/>
+<wire x1="-45.72" y1="111.76" x2="-45.72" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -18183,13 +18183,6 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="264.16" y1="-165.1" x2="264.16" y2="-185.42" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="R3" gate="G$1" pin="2"/>
-<pinref part="VSS_LED" gate="G$1" pin="C"/>
-<wire x1="-45.72" y1="121.92" x2="-45.72" y2="129.54" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$11" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="(TDI)PC5"/>
@@ -18232,6 +18225,13 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="284.48" y1="-170.18" x2="284.48" y2="-185.42" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="L298" pin="OUT3"/>
 <wire x1="251.46" y1="-170.18" x2="284.48" y2="-170.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="VSS_LED" gate="G$1" pin="A"/>
+<wire x1="-45.72" y1="124.46" x2="-45.72" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
