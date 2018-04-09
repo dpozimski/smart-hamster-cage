@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+#Excludes
+!Tools/AvrDude/avrdude.exe
+
+#Dirs
+.vs/
+Debug/
+Release/
+Build/
