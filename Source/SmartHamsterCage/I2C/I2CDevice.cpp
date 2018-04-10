@@ -19,7 +19,7 @@ I2CDevice::I2CDevice(uint8_t address)
 	TWBR = ((F_CPU/SCL_CLOCK)-16)/2;
 }
 
-bool I2CDevice::init() {
+bool I2CDevice::beginWrite() {
 	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
 	while(!(TWCR & (1<<TWINT)));
 
@@ -55,7 +55,7 @@ bool I2CDevice::write(uint8_t data) {
 	}
 }
 
-void I2CDevice::stop(void) {
+void I2CDevice::endWrite(void) {
 	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
 	while(TWCR & (1<<TWSTO));
 }

@@ -6,8 +6,8 @@
 class I2CDevice {
 	public:
 	I2CDevice(uint8_t address);
-	bool init();
-	void stop(void);
+	bool beginWrite();
+	void endWrite(void);
 	protected:
 	bool write(uint8_t data);
 	private:
