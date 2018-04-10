@@ -168,9 +168,21 @@
     <PostBuildEvent>xcopy /s "$(OutputDirectory)\*" "$(SolutionDir)Build\" /Y</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="I2C\I2CDevice.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="I2C\I2CDevice.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="PinConfiguration.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="I2C" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
