@@ -5,13 +5,16 @@
  *  Author: dpsol
  */ 
 
+#define SP_ENABLE PA1
+#define SP_DIR PA0
+#define SP_HALF_FULL_MODE PA2
+
 #include "StepperMotor.h"
-#include "./../PinConfiguration.h"
 #include <avr/io.h>
 
 void StepperMotor::init()
 {
-    PORTA = (1 << SP_DIR) | (1 << SP_HALF_FULL_MODE) | (1 << SP_ENABLE);
+    DDRA = (1 << SP_DIR) | (1 << SP_HALF_FULL_MODE) | (1 << SP_ENABLE);
 }
 
 void StepperMotor::setDirection(StepperMotorDirection direction)

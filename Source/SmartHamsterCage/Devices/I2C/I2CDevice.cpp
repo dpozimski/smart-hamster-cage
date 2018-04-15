@@ -5,9 +5,11 @@
  *  Author: d.pozimski
  */ 
 
+#define SCL_CLOCK 100000L
+
 #include <util/twi.h>
 #include "I2CDevice.h"
-#include "./../../PinConfiguration.h"
+#include "./../../GlobalDefs.h"
 
 I2CDevice::I2CDevice(uint8_t address) 
 {
