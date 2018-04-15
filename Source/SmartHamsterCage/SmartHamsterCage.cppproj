@@ -184,6 +184,21 @@
     <Compile Include="Devices\I2C\I2CDevice.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Devices\I2C\OLED\OLED_Fonts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\OLED_Screen.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\OLED_Screen.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\SSD1306_Adapter.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\SSD1306_Adapter.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Devices\PWM\Fan.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -224,6 +239,7 @@
   <ItemGroup>
     <Folder Include="Devices\I2C\" />
     <Folder Include="Devices" />
+    <Folder Include="Devices\I2C\OLED" />
     <Folder Include="Devices\PWM" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

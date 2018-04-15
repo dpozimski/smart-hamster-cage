@@ -11,6 +11,9 @@
 #include "I2CDevice.h"
 #include "./../../GlobalDefs.h"
 
+uint8_t I2CDevice::twi_status_register = 0x00;
+bool I2CDevice::busInitialized = false;
+
 I2CDevice::I2CDevice(uint8_t address) 
 {
 	this->address = address;

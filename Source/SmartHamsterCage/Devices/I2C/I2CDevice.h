@@ -10,6 +10,7 @@
 
 #include "./../Device.h"
 #include <stdbool.h>
+#include <stdint.h>
 
 class I2CDevice : Device {
 	public:

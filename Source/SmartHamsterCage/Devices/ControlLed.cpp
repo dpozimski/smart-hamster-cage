@@ -14,7 +14,8 @@
 
 void ControlLed::init()
 {
-	DDRC = (1 << PC5);
+	DDRC |= (1 << PC5);
+	this->setValue(false);
 }
 
 bool ControlLed::readValue()
@@ -31,7 +32,7 @@ void ControlLed::signal()
 {
 	bool previousValue = this->readValue();
 	
-	for(int i = 0; i < 20; i++)
+	for(uint8_t i = 0; i < 20; i++)
 	{
 		PORTC ^= (1 << CTRL_LED);
 		_delay_ms(50);
