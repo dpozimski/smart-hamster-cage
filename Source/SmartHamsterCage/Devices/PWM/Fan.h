@@ -11,7 +11,7 @@
 
 #include "PWMDevice.h"
 
-class Fan : PWMDevice
+class Fan : public PWMDevice
 {
     public:
         void init() override;

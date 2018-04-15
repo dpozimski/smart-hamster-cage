@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include "./../Device.h"
 
-class PWMDevice : Device
+class PWMDevice : public Device
 {
     public:
         void setValue(uint8_t value);

@@ -11,7 +11,7 @@
 
 #include "PWMDevice.h"
 
-class WaterPump : PWMDevice
+class WaterPump : public PWMDevice
 {
     public:
         void init() override;

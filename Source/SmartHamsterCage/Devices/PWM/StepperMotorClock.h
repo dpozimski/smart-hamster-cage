@@ -11,7 +11,7 @@
 
 #include "PWMDevice.h"
 
-class StepperMotorClock : PWMDevice
+class StepperMotorClock : public PWMDevice
 {
     public:
         void init() override;
