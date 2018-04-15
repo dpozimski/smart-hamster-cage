@@ -10,11 +10,11 @@
 #define PWMDEVICE_H_
 
 #include <stdint.h>
+#include "./../Device.h"
 
-class PWMDevice
+class PWMDevice : Device
 {
     public:
-        virtual void init() = 0;
         void setValue(uint8_t value);
         uint8_t readValue();
     protected:

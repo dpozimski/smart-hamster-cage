@@ -169,6 +169,9 @@
     <PostBuildEvent>xcopy /s "$(OutputDirectory)\*" "$(SolutionDir)Build\" /Y</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Devices\Device.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Devices\I2C\I2CDevice.cpp">
       <SubType>compile</SubType>
     </Compile>

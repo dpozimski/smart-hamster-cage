@@ -17,8 +17,6 @@ int main(void)
 {
     //enable interrupts
     sei();
-    //Init i2c bus
-    I2CDevice::initBus();
 
     //Init pwm devices
     Fan fan;

@@ -9,15 +9,19 @@
 #include "I2CDevice.h"
 #include "./../../PinConfiguration.h"
 
-void I2CDevice::initBus()
-{
-	TWSR = 0;
-	TWBR = ((F_CPU/SCL_CLOCK)-16)/2;
-}
-
 I2CDevice::I2CDevice(uint8_t address) 
 {
 	this->address = address;
+}
+
+void I2CDevice::init()
+{
+    if(!this->busInitialized)
+    {
+        TWSR = 0;
+        TWBR = ((F_CPU/SCL_CLOCK)-16)/2;
+        this->busInitialized = true;
+    }
 }
 
 bool I2CDevice::beginWrite() {
