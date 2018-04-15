@@ -5,18 +5,19 @@
  *  Author: d.pozimski
  */ 
 
-#include <stdint.h>
 #include <util/twi.h>
 #include "I2CDevice.h"
-#include "./../PinConfiguration.h"
+#include "./../../PinConfiguration.h"
 
-#define SCL_CLOCK  100000L
+void I2CDevice::initBus()
+{
+	TWSR = 0;
+	TWBR = ((F_CPU/SCL_CLOCK)-16)/2;
+}
 
 I2CDevice::I2CDevice(uint8_t address) 
 {
 	this->address = address;
-	TWSR = 0;
-	TWBR = ((F_CPU/SCL_CLOCK)-16)/2;
 }
 
 bool I2CDevice::beginWrite() {
@@ -25,7 +26,7 @@ bool I2CDevice::beginWrite() {
 
 	twi_status_register = TW_STATUS & 0xF8;
 	if ((this->twi_status_register != TW_START) && (this->twi_status_register != TW_REP_START)) {
-		return 1;
+		return true;
 	}
 
 	TWDR = address;
@@ -35,10 +36,10 @@ bool I2CDevice::beginWrite() {
 
 	this->twi_status_register = TW_STATUS & 0xF8;
 	if ((this->twi_status_register != TW_MT_SLA_ACK) && (this->twi_status_register != TW_MR_SLA_ACK)) {
-		return 1;
+		return true;
 	}
 
-	return 0;
+	return false;
 }
 
 bool I2CDevice::write(uint8_t data) {
@@ -48,11 +49,8 @@ bool I2CDevice::write(uint8_t data) {
 	while(!(TWCR & (1<<TWINT)));
 
 	this->twi_status_register = TW_STATUS & 0xF8;
-	if (this->twi_status_register != TW_MT_DATA_ACK) {
-		return 1;
-		} else {
-		return 0;
-	}
+    
+	return this->twi_status_register != TW_MT_DATA_ACK;
 }
 
 void I2CDevice::endWrite(void) {

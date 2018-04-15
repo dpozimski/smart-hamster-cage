@@ -11,7 +11,7 @@
 
 
 #define F_CPU 8000000UL 
-
+#define SCL_CLOCK 100000L
 
 
 #endif /* PINCONFIGURATION_H_ */
