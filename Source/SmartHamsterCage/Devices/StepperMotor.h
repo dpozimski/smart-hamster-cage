@@ -2,7 +2,7 @@
  * StepperMotor.h
  *
  * Created: 15.04.2018 17:18:07
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 

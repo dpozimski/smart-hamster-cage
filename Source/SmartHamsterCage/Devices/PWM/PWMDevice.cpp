@@ -2,7 +2,7 @@
  * PWMDevice.cpp
  *
  * Created: 15.04.2018 13:46:23
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 #include "PWMDevice.h"

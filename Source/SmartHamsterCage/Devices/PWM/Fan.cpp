@@ -2,7 +2,7 @@
  * Fan.cpp
  *
  * Created: 15.04.2018 13:55:53
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 #include "Fan.h"

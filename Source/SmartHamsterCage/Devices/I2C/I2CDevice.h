@@ -2,7 +2,7 @@
  * I2CDevice.h
  *
  * Created: 15.04.2018 13:28:33
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 #ifndef _I2C_H_
@@ -17,12 +17,15 @@ class I2CDevice : Device {
 	    I2CDevice(uint8_t address);
         void init() override;
 	protected:
-	    bool write(uint8_t data);
-        bool beginWrite();
-        void endWrite(void);
+	    bool writeToRegistry(uint8_t regaddr, uint8_t* data, uint16_t length);
 	private:
+        bool beginTransmission(bool isWriteMode);
+        uint8_t readWithAck();
+        uint8_t readWithoutAck();
+        bool write(uint8_t data);
+        void endTransmission(void);
+        void waitForEndOfTransmission();
 	    uint8_t address;
-	    static uint8_t twi_status_register;
         static bool busInitialized;
 };
 

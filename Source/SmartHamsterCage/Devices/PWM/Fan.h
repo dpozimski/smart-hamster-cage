@@ -2,7 +2,7 @@
  * Fan.h
  *
  * Created: 15.04.2018 13:28:33
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 

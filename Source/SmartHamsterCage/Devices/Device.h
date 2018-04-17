@@ -2,7 +2,7 @@
  * Device.h
  *
  * Created: 15.04.2018 17:08:41
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 

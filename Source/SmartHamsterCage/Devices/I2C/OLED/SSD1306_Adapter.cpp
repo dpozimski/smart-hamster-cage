@@ -89,14 +89,6 @@ void SSD1306Adapter::init()
     this->sendCommand(DISPLAYON);
 }
 
-void SSD1306Adapter::sendCommand(uint8_t command) 
-{
-	this->beginWrite();
-	this->write(0x00);
-	this->write(command);
-	this->endWrite();
-}
-
 void SSD1306Adapter::sendFramebuffer(uint8_t *buffer) 
 {
 	this->sendCommand(COLUMNADDR);
@@ -108,13 +100,18 @@ void SSD1306Adapter::sendFramebuffer(uint8_t *buffer)
 	this->sendCommand((SSD1306_HEIGHT / 8) - 1);
 
 	for (uint8_t packet = 0; packet < REQPACKETSTOSEND; packet++) {
-		this->beginWrite();
-		this->write(0x40);
+        uint8_t[SINGLEPACKETCOUNT] packet;
 		for (uint8_t packet_byte = 0; packet_byte < SINGLEPACKETCOUNT; ++packet_byte) 
 		{
-			this->write(buffer[packet*16+packet_byte]);
+			packet[packet_byte] = buffer[packet*16+packet_byte];
 		}
-		this->endWrite();
+        this->writeToRegistry(0x40, packet, SINGLEPACKETCOUNT);
 	}
+}
+
+void SSD1306Adapter::sendCommand(uint8_t command)
+{
+    uint8_t data[] = { command };
+    this->writeToRegistry(0x00, data, 1);
 }
 

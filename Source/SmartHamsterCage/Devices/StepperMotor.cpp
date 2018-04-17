@@ -2,7 +2,7 @@
  * StepperMotor.cpp
  *
  * Created: 15.04.2018 17:43:38
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 #define SP_ENABLE PA1

@@ -6,12 +6,13 @@
  */ 
 
 #define SCL_CLOCK 100000L
+#define I2C_READ 0x01
+#define I2C_WRITE 0x00
 
 #include <util/twi.h>
 #include "I2CDevice.h"
 #include "./../../GlobalDefs.h"
 
-uint8_t I2CDevice::twi_status_register = 0x00;
 bool I2CDevice::busInitialized = false;
 
 I2CDevice::I2CDevice(uint8_t address) 
@@ -23,46 +24,95 @@ void I2CDevice::init()
 {
     if(!this->busInitialized)
     {
+        //init bus
         TWSR = 0;
         TWBR = ((F_CPU/SCL_CLOCK)-16)/2;
         this->busInitialized = true;
     }
 }
 
-bool I2CDevice::beginWrite() {
-	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
-	while(!(TWCR & (1<<TWINT)));
+bool I2CDevice::writeToRegistry(uint8_t regaddr, uint8_t* data, uint16_t length)
+{
+    if (this->beginTransmission(false)) return 1;
 
-	twi_status_register = TW_STATUS & 0xF8;
-	if ((this->twi_status_register != TW_START) && (this->twi_status_register != TW_REP_START)) {
-		return true;
-	}
+    this->write(regaddr);
 
-	TWDR = address;
-	TWCR = (1<<TWINT) | (1<<TWEN);
+    for (uint16_t i = 0; i < length; i++)
+    {
+        if (this->write(data[i])) 
+            return 1;
+    }
 
-	while(!(TWCR & (1<<TWINT)));
+    this->endTransmission();
 
-	this->twi_status_register = TW_STATUS & 0xF8;
-	if ((this->twi_status_register != TW_MT_SLA_ACK) && (this->twi_status_register != TW_MR_SLA_ACK)) {
-		return true;
-	}
-
-	return false;
+    return 0;
 }
 
-bool I2CDevice::write(uint8_t data) {
-	TWDR = data;
-	TWCR = (1<<TWINT) | (1<<TWEN);
+/* True if error has been occured */
+bool I2CDevice::beginTransmission(bool isWriteMode) 
+{
+    // reset TWI control register
+    TWCR = 0;
+    // transmit START condition
+    TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+    this->waitForEndOfTransmission();
 
-	while(!(TWCR & (1<<TWINT)));
+    // check if the start condition was successfully transmitted
+    if((TWSR & 0xF8) != TW_START)
+    {
+        return true;
+    }
 
-	this->twi_status_register = TW_STATUS & 0xF8;
-    
-	return this->twi_status_register != TW_MT_DATA_ACK;
+    // load slave address into data register
+    TWDR = isWriteMode ? (address | I2C_WRITE) : (address | I2C_READ);
+    // transmission of address
+    TWCR = (1<<TWINT) | (1<<TWEN);
+    this->waitForEndOfTransmission();
+
+    // check if the device has acknowledged the READ / WRITE mode
+    uint8_t twst = TW_STATUS & 0xF8;
+    return (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK);
 }
 
-void I2CDevice::endWrite(void) {
+uint8_t I2CDevice::readWithAck()
+{
+    // start TWI module and acknowledge data after reception
+    TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+    this->waitForEndOfTransmission();
+    // return received data from TWDR
+    return TWDR;
+}
+
+uint8_t I2CDevice::readWithoutAck()
+{
+    // receive without acknowledging reception
+    TWCR = (1<<TWINT) | (1<<TWEN);
+    this->waitForEndOfTransmission();
+    // return received data from TWDR
+    return TWDR;
+}
+
+/* True if error has been occured */
+bool I2CDevice::write(uint8_t data) 
+{
+    // load data into data register
+    TWDR = data;
+    // transmission of data
+    TWCR = (1<<TWINT) | (1<<TWEN);
+    this->waitForEndOfTransmission();
+    // check if the device transmitted the data
+    return (TWSR & 0xF8) != TW_MT_DATA_ACK;
+}
+
+void I2CDevice::endTransmission(void) 
+{
+	// transmit STOP condition
 	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+    // wait for end of stop transmission
 	while(TWCR & (1<<TWSTO));
+}
+
+void I2CDevice::waitForEndOfTransmission()
+{
+    while( !(TWCR & (1<<TWINT)) );
 }

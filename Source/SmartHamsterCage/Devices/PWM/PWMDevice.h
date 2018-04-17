@@ -2,7 +2,7 @@
  * PWMDevice.h
  *
  * Created: 15.04.2018 13:42:46
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 

@@ -2,7 +2,7 @@
  * StepperMotorClock.h
  *
  * Created: 15.04.2018 15:21:32
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 
