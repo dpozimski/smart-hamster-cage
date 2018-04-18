@@ -33,6 +33,16 @@ void OLEDScreen::init()
 	this->ssd1306.init();
 }
 
+void OLEDScreen::clearBuffer()
+{
+	memset(buffer, 0, SSD1306_BUFFERSIZE);
+}
+
+void OLEDScreen::flush()
+{
+	this->ssd1306.sendFramebuffer(buffer);
+}
+
 void OLEDScreen::drawText(uint8_t x, uint8_t y, char* text)
 {
 	uint8_t lineHeight = pgm_read_byte(fontData + HEIGHT_POS);
