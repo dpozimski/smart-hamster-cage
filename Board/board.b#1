@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="8.7.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="2" altunitdist="mm" altunit="mm"/>
@@ -80,6 +81,8 @@
 <wire x1="118.8" y1="-121.73" x2="118.8" y2="-28.32" width="0" layer="20"/>
 <wire x1="118.8" y1="-28.32" x2="-10.16" y2="-28.32" width="0" layer="20"/>
 <wire x1="-10.16" y1="-28.32" x2="-10.16" y2="-121.73" width="0" layer="20"/>
+<text x="92" y="-35" size="1.28" layer="1" font="vector">SMART HAMSTER CAGE v1
+Damian Pozimski @ 2018</text>
 </plain>
 <libraries>
 <library name="st-microelectronics">
@@ -3319,10 +3322,11 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="1"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -3508,15 +3512,15 @@ design rules under a new name.</description>
 <element name="IC3" library="st-microelectronics" package="MULTIWATT-15" value="L298" x="36.56" y="-89.6"/>
 <element name="X5" library="con-ptr500" package="AK500/2" value="SM_CD" x="70.77" y="-114.3">
 <attribute name="MF" value="" x="59.34" y="-100.33" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="59.34" y="-100.33" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="59.34" y="-100.33" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="59.34" y="-100.33" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="59.34" y="-100.33" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="59.34" y="-100.33" size="1.778" layer="27" display="off"/>
 </element>
 <element name="X6" library="con-ptr500" package="AK500/2" value="SM_AB" x="57.53" y="-114.3">
 <attribute name="MF" value="" x="34.67" y="-86.36" size="1.778" layer="27" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="34.67" y="-86.36" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="34.67" y="-86.36" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="34.67" y="-86.36" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="34.67" y="-86.36" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="34.67" y="-86.36" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R4" library="rcl" package="0207/12" value="470R" x="16.02" y="-93.13" rot="R1.1">
 <attribute name="SPICEPREFIX" value="R" x="16.02" y="-93.13" size="1.778" layer="27" rot="R1.1" display="off"/>
@@ -3552,8 +3556,8 @@ design rules under a new name.</description>
 <element name="CTRL_LED" library="led" package="LED5MM" value="" x="-2" y="-102"/>
 <element name="VSS_LED" library="led" package="LED5MM" value="" x="-2" y="-112"/>
 <element name="U2" library="ds1621p" package="21-0043D_8" value="DS1621+" x="114" y="-71">
-<attribute name="VENDOR" value="Maxim Integrated Products" x="114" y="-71" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="DS1621+" x="114" y="-71" size="1.778" layer="27" display="off"/>
+<attribute name="VENDOR" value="Maxim Integrated Products" x="114" y="-71" size="1.778" layer="27" display="off"/>
 </element>
 <element name="R6" library="rcl" package="0207/12" value="4K7" x="99" y="-72" rot="R90">
 <attribute name="SPICEPREFIX" value="R" x="99" y="-72" size="1.778" layer="27" rot="R90" display="off"/>
@@ -4186,7 +4190,6 @@ design rules under a new name.</description>
 <via x="39" y="-39" extent="1-16" drill="0.6096"/>
 </signal>
 <signal name="N$18">
-<contactref element="IC2" pad="39"/>
 <contactref element="IC1" pad="18"/>
 <wire x1="32" y1="-42" x2="32" y2="-45" width="1.27" layer="16"/>
 <wire x1="50" y1="-42" x2="32" y2="-42" width="1.27" layer="16"/>
@@ -4194,23 +4197,23 @@ design rules under a new name.</description>
 <wire x1="62.5" y1="-40.5" x2="61" y2="-42" width="1.27" layer="1"/>
 <wire x1="62.5" y1="-39.5" x2="62.5" y2="-40.5" width="1.27" layer="1"/>
 <wire x1="32" y1="-45" x2="32.31" y2="-45.23" width="1.27" layer="16"/>
-<wire x1="62.5" y1="-39.5" x2="62.99" y2="-39.4" width="1.27" layer="1"/>
 <via x="50" y="-42" extent="1-16" drill="0.6096"/>
+<contactref element="IC2" pad="19"/>
+<wire x1="62.5" y1="-40.5" x2="106.17" y2="-54.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$19">
-<contactref element="IC2" pad="38"/>
 <contactref element="IC1" pad="10"/>
 <wire x1="53.5" y1="-49.5" x2="50.5" y2="-52.5" width="1.27" layer="16"/>
 <wire x1="54" y1="-49.5" x2="53.5" y2="-49.5" width="1.27" layer="16"/>
 <wire x1="56" y1="-49.5" x2="54" y2="-49.5" width="1.27" layer="1"/>
 <wire x1="66" y1="-39.5" x2="56" y2="-49.5" width="1.27" layer="1"/>
 <wire x1="50.5" y1="-52.5" x2="50.09" y2="-52.85" width="1.27" layer="16"/>
-<wire x1="66" y1="-39.5" x2="65.53" y2="-39.4" width="1.27" layer="1"/>
 <via x="54" y="-49.5" extent="1-16" drill="0.6096"/>
+<contactref element="IC2" pad="39"/>
+<wire x1="66" y1="-39.5" x2="62.99" y2="-39.4" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$20">
 <contactref element="IC1" pad="19"/>
-<contactref element="IC2" pad="37"/>
 <wire x1="30" y1="-40.5" x2="30" y2="-45" width="1.27" layer="16"/>
 <wire x1="47" y1="-40.5" x2="30" y2="-40.5" width="1.27" layer="16"/>
 <wire x1="54" y1="-40.5" x2="47" y2="-40.5" width="1.27" layer="1"/>
@@ -4218,8 +4221,9 @@ design rules under a new name.</description>
 <wire x1="64.5" y1="-35.5" x2="59" y2="-35.5" width="1.27" layer="1"/>
 <wire x1="68" y1="-39" x2="64.5" y2="-35.5" width="1.27" layer="1"/>
 <wire x1="30" y1="-45" x2="29.77" y2="-45.23" width="1.27" layer="16"/>
-<wire x1="68" y1="-39" x2="68.07" y2="-39.4" width="1.27" layer="1"/>
 <via x="47" y="-40.5" extent="1-16" drill="0.6096"/>
+<contactref element="IC2" pad="38"/>
+<wire x1="68" y1="-39" x2="65.53" y2="-39.4" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$35">
 <contactref element="IC2" pad="23"/>
@@ -4593,14 +4597,20 @@ design rules under a new name.</description>
 </signal>
 </signals>
 <errors>
+<approved hash="3,1,de81ee2413a72302"/>
+<approved hash="3,1,0a0f2232e237ca0a"/>
+<approved hash="3,1,bbd6f2eb32ec7bd1"/>
 <approved hash="3,1,689e83a343a4a899"/>
 <approved hash="3,1,e7a6ab9b6b9c27a1"/>
 <approved hash="3,1,36ed1ad0dad5f6e8"/>
 <approved hash="3,16,7e52c7b8c79d7e77"/>
-<approved hash="3,16,7679c209c29576e5"/>
-<approved hash="3,16,79e3bd02e172f5a4"/>
-<approved hash="3,16,4f050b750b174f67"/>
 </errors>
 </board>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>

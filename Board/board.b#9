@@ -3555,6 +3555,12 @@ design rules under a new name.</description>
 <attribute name="VENDOR" value="Maxim Integrated Products" x="-12" y="-120" size="1.778" layer="27" display="off"/>
 <attribute name="MANUFACTURER_PART_NUMBER" value="DS1621+" x="-12" y="-120" size="1.778" layer="27" display="off"/>
 </element>
+<element name="R6" library="rcl" package="0207/12" value="4K7" x="-13" y="-126">
+<attribute name="SPICEPREFIX" value="R" x="-13" y="-126" size="1.778" layer="27" display="off"/>
+</element>
+<element name="R8" library="rcl" package="0207/12" value="4K7" x="-13" y="-131">
+<attribute name="SPICEPREFIX" value="R" x="-13" y="-131" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -3776,6 +3782,10 @@ design rules under a new name.</description>
 <wire x1="10.9728" y1="-76.6572" x2="10.99" y2="-76.6" width="0.1524" layer="16"/>
 <via x="12.4968" y="-79.4004" extent="1-16" drill="0.35"/>
 <contactref element="U2" pad="8"/>
+<contactref element="R6" pad="2"/>
+<contactref element="R8" pad="2"/>
+<wire x1="-6.65" y1="-126" x2="-6.65" y2="-131" width="0" layer="19" extent="1-1"/>
+<wire x1="-12" y1="-112.38" x2="-6.65" y2="-126" width="0" layer="19" extent="1-1"/>
 <wire x1="12.4968" y1="-97.536" x2="-12" y2="-112.38" width="0" layer="19" extent="1-1"/>
 <wire x1="37.6428" y1="-108.204" x2="37.4904" y2="-108.0516" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -4077,6 +4087,8 @@ design rules under a new name.</description>
 <wire x1="33.6804" y1="-115.5192" x2="33.55" y2="-115.58" width="0.1524" layer="16"/>
 <via x="76.5048" y="-80.4672" extent="1-16" drill="0.35"/>
 <contactref element="U2" pad="2"/>
+<contactref element="R8" pad="1"/>
+<wire x1="-19.62" y1="-114.92" x2="-19.35" y2="-131" width="0" layer="19" extent="1-1"/>
 <wire x1="31.8516" y1="-113.8428" x2="-19.62" y2="-114.92" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$36">
@@ -4103,6 +4115,8 @@ design rules under a new name.</description>
 <via x="80.772" y="-81.2292" extent="1-16" drill="0.35"/>
 <via x="80.772" y="-82.4484" extent="1-16" drill="0.35"/>
 <contactref element="U2" pad="1"/>
+<contactref element="R6" pad="1"/>
+<wire x1="-19.62" y1="-112.38" x2="-19.35" y2="-126" width="0" layer="19" extent="1-1"/>
 <wire x1="32.1564" y1="-111.7092" x2="-19.62" y2="-112.38" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$37">

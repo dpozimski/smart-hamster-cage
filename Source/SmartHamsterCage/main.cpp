@@ -5,49 +5,49 @@
  * Author : d.pozimski
  */ 
 
-#define F_CPU 8000000
-
-#define LED_ON(pin) PORTD |= (1 << pin)
-#define LED_OFF(pin) PORTD &= ~(1 << pin)
-#define LED_TOGGLE(pin) PORTD ^= (1 << pin)
-
-#include <stdbool.h>
-
 #include <avr/io.h>
-#include <util/delay.h>
-#include <stdlib.h>
+#include <avr/interrupt.h>
+
+#include "Devices/PWM/Fan.h"
+#include "Devices/PWM/WaterPump.h"
+#include "Devices/ControlLed.h"
+#include "Devices/I2C/Thermometer.h"
+#include "Devices/I2C/OLED/OLED_Screen.h"
+#include "Devices/StepperMotor.h"
+#include "Flow/UIController.h"
+#include "Flow/WaterFeedController.h"
+#include "Flow/FanController.h"
+#include "Flow/FoodFeedController.h"
 
 
 int main(void)
 {
-	DDRD = 255;
+    //enable interrupts
+    sei();
+
+    //Init devices
+    Fan fan;
+    WaterPump waterPump;
+	ControlLed controlLed;
+	StepperMotor stepperMotor;
+	Thermometer thermometer;
+	OLEDScreen oledScreen;
+	fan.init();
+	waterPump.init();
+	controlLed.init();
+	stepperMotor.init();
+	oledScreen.init();
+	thermometer.init();
 	
-	int idx = 0;
-	bool state = true;
-	srand(53543);
-	while (1)
+	//Flow objects
+	UIController uiController(&oledScreen);
+	FanController fanController(&fan);
+	FoodFeedController foodFeedController(&stepperMotor);
+	WaterFeedController waterFeedController(&waterPump);
+	
+	while(true)
 	{
-		if(state && idx < 150)
-		{
-			idx++;
-		}
-		else if(!state)
-		{
-			idx--;
-		}
-		
-		for(int i = 0; i < idx; i++)
-		{
-			_delay_ms(1);
-		}
-		
-		if(idx >= 150)
-			state = false;
-			
-		if(idx <= 0)
-			state = true;
-		
-		LED_TOGGLE(PD6);
-    }
+		uiController.display();
+	}
 }
 
