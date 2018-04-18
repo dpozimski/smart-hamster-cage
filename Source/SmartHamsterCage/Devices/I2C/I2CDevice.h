@@ -17,7 +17,12 @@ class I2CDevice : Device {
 	    I2CDevice(uint8_t address);
         void init() override;
 	protected:
-	    bool writeToRegistry(uint8_t regaddr, uint8_t* data, uint16_t length);
+	    bool transmit(uint8_t* data, uint16_t length);
+		bool receive(uint8_t* data, uint16_t length);
+		bool writeToRegistry(uint8_t regAddr, uint8_t* data, uint16_t length);
+		bool readFromRegistry(uint8_t regAddr, uint8_t* data, uint16_t length);
+		bool writeByteToRegistry(uint8_t regAddr, uint8_t data);
+		uint8_t readByteFromRegistry(uint8_t regAddr);
 	private:
         bool beginTransmission(bool isWriteMode);
         uint8_t readWithAck();

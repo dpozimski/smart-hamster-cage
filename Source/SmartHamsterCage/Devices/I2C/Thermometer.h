@@ -16,6 +16,7 @@ class Thermometer : public I2CDevice
     public:
         Thermometer();
         void init() override;
+		float getTemperature();
 };
 
 #endif /* THERMOMETER_H_ */

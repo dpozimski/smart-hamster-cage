@@ -17,7 +17,7 @@ bool I2CDevice::busInitialized = false;
 
 I2CDevice::I2CDevice(uint8_t address) 
 {
-	this->address = address;
+	this->address = address << 1;
 }
 
 void I2CDevice::init()
@@ -31,21 +31,106 @@ void I2CDevice::init()
     }
 }
 
-bool I2CDevice::writeToRegistry(uint8_t regaddr, uint8_t* data, uint16_t length)
+bool I2CDevice::transmit(uint8_t* data, uint16_t length)
 {
-    if (this->beginTransmission(false)) return 1;
+	if (this->beginTransmission(true))
+		return true;
+	
+	for (uint16_t i = 0; i < length; i++)
+	{
+		if (this->write(data[i]))
+			return true;
+	}
+	
+	this->endTransmission();
+	
+	return false;
+}
 
-    this->write(regaddr);
+bool I2CDevice::receive(uint8_t* data, uint16_t length)
+{
+	if (this->beginTransmission(false))
+		return true;
+	
+	for (uint16_t i = 0; i < (length-1); i++)
+	{
+		data[i] = this->readWithAck();
+	}
+	data[(length-1)] = this->readWithoutAck();
+	
+	this->endTransmission();
+	
+	return false;
+}
 
-    for (uint16_t i = 0; i < length; i++)
-    {
-        if (this->write(data[i])) 
-            return 1;
-    }
+bool I2CDevice::writeToRegistry(uint8_t regAddr, uint8_t* data, uint16_t length)
+{
+	if (this->beginTransmission(true)) 
+		return true;
 
-    this->endTransmission();
+	this->write(regAddr);
 
-    return 0;
+	for (uint16_t i = 0; i < length; i++)
+	{
+		if (this->write(data[i])) 
+			return true;
+	}
+
+	this->endTransmission();
+
+	return false;
+}
+
+bool I2CDevice::readFromRegistry(uint8_t regAddr, uint8_t* data, uint16_t length)
+{
+	if (this->beginTransmission(true)) 
+		return true;
+
+	this->write(regAddr);
+
+	if (this->beginTransmission(false))
+		return true;
+
+	for (uint16_t i = 0; i < (length-1); i++)
+	{
+		data[i] = this->readWithAck();
+	}
+	data[length-1] = this->readWithoutAck();
+
+	this->endTransmission();
+
+	return false;
+}
+
+
+bool I2CDevice::writeByteToRegistry(uint8_t regAddr, uint8_t data)
+{
+	if (this->beginTransmission(true))
+		return true;
+
+	this->write(regAddr);
+	this->write(data);
+
+	this->endTransmission();
+
+	return false;
+}
+
+uint8_t I2CDevice::readByteFromRegistry(uint8_t regAddr)
+{
+	if (this->beginTransmission(true))
+		return -1;
+
+	this->write(regAddr);
+
+	if (this->beginTransmission(false))
+		return -1;
+
+	uint8_t value = this->readWithoutAck();
+
+	this->endTransmission();
+
+	return value;
 }
 
 /* True if error has been occured */
@@ -59,9 +144,7 @@ bool I2CDevice::beginTransmission(bool isWriteMode)
 
     // check if the start condition was successfully transmitted
     if((TWSR & 0xF8) != TW_START)
-    {
         return true;
-    }
 
     // load slave address into data register
     TWDR = isWriteMode ? (address | I2C_WRITE) : (address | I2C_READ);
