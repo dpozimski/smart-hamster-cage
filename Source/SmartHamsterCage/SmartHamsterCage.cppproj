@@ -235,10 +235,28 @@
     <Compile Include="Devices\StepperMotor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Flow\FanController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Flow\FanController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Flow\FoodFeedController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Flow\FoodFeedController.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Flow\UIController.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Flow\UIController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Flow\WaterFeedController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Flow\WaterFeedController.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.cpp">

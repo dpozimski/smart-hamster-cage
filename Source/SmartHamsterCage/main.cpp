@@ -15,6 +15,9 @@
 #include "Devices/I2C/OLED/OLED_Screen.h"
 #include "Devices/StepperMotor.h"
 #include "Flow/UIController.h"
+#include "Flow/WaterFeedController.h"
+#include "Flow/FanController.h"
+#include "Flow/FoodFeedController.h"
 
 
 int main(void)
@@ -38,6 +41,9 @@ int main(void)
 	
 	//Flow objects
 	UIController uiController(&oledScreen);
+	FanController fanController(&fan);
+	FoodFeedController foodFeedController(&stepperMotor);
+	WaterFeedController waterFeedController(&waterPump);
 	
 	while(true)
 	{
