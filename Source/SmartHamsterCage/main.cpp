@@ -8,11 +8,13 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#include "Devices/I2C/I2CDevice.h"
 #include "Devices/PWM/Fan.h"
 #include "Devices/PWM/WaterPump.h"
 #include "Devices/ControlLed.h"
-#include "Devices/I2C/OLED/SSD1306_Adapter.h"
+#include "Devices/I2C/Thermometer.h"
+#include "Devices/I2C/OLED/OLED_Screen.h"
+#include "Devices/StepperMotor.h"
+#include "Flow/UIController.h"
 
 
 int main(void)
@@ -24,11 +26,22 @@ int main(void)
     Fan fan;
     WaterPump waterPump;
 	ControlLed controlLed;
-	SSD1306Adapter ssd1306;
-	
-    fan.init();
-    waterPump.init();
+	StepperMotor stepperMotor;
+	Thermometer thermometer;
+	OLEDScreen oledScreen;
+	fan.init();
+	waterPump.init();
 	controlLed.init();
-	ssd1306.init();
+	stepperMotor.init();
+	oledScreen.init();
+	thermometer.init();
+	
+	//Flow objects
+	UIController uiController(&oledScreen);
+	
+	while(true)
+	{
+		uiController.display();
+	}
 }
 

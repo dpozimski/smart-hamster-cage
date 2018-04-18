@@ -35,7 +35,7 @@ void OLEDScreen::init()
 
 void OLEDScreen::clearBuffer()
 {
-	memset(buffer, 0, SSD1306_BUFFERSIZE);
+	memset(this->buffer, 0, SSD1306_BUFFERSIZE);
 }
 
 void OLEDScreen::flush()
@@ -127,14 +127,13 @@ void inline OLEDScreen::drawInternal(int16_t xMove, int16_t yMove, int16_t width
 	if (xMove + width  < 0 || xMove > SSD1306_WIDTH)   
 		return;
 
-	uint8_t  rasterHeight = 1 + ((height - 1) >> 3);
-	int8_t   yOffset      = yMove & 7;
+	uint8_t rasterHeight = 1 + ((height - 1) >> 3);
+	int8_t yOffset = yMove & 7;
 
 	bytesInData = bytesInData == 0 ? width * rasterHeight : bytesInData;
 
 	int16_t initYMove   = yMove;
-	int8_t  initYOffset = yOffset;
-
+	int8_t initYOffset = yOffset;
 
 	for (uint16_t i = 0; i < bytesInData; i++) 
 	{
@@ -167,12 +166,9 @@ void inline OLEDScreen::drawInternal(int16_t xMove, int16_t yMove, int16_t width
 			{
 				// Make new offset position
 				yOffset = -yOffset;
-				
 				buffer[dataPos] |= currentByte >> yOffset;
-
 				// Prepare for next iteration by moving one block up
 				yMove -= 8;
-
 				// and setting the new yOffset
 				yOffset = 8 - yOffset;
 			}
