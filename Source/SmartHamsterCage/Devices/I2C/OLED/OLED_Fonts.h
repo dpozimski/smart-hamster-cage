@@ -10,7 +10,7 @@
 
 #include <avr/pgmspace.h>
 
-const char PROGMEM ArialMT_Plain_10[] = {
+const uint8_t ArialMT_Plain_10[] PROGMEM = {
 	0x0A, // Width: 10
 	0x0D, // Height: 13
 	0x20, // First Char: 32
