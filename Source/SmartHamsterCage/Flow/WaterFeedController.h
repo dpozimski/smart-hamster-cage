@@ -9,12 +9,14 @@
 #ifndef WATERFEEDCONTROLLER_H_
 #define WATERFEEDCONTROLLER_H_
 
+#include "Controller.h"
 #include "./../Devices/PWM/WaterPump.h"
 
-class WaterFeedController
+class WaterFeedController : public Controller
 {
 	public:
 		WaterFeedController(WaterPump* waterPump);
+        void update() override;
 	private:
 		WaterPump* waterPump;
 };

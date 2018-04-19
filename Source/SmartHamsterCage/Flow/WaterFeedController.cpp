@@ -11,3 +11,8 @@ WaterFeedController::WaterFeedController(WaterPump* waterPump) : waterPump(water
 {
 
 }
+
+void WaterFeedController::update()
+{
+
+}

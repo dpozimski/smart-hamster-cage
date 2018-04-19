@@ -9,5 +9,10 @@
 
 FanController::FanController(Fan* fan) : fan(fan)
 {
+    
+}
+
+void FanController::update()
+{
 
 }

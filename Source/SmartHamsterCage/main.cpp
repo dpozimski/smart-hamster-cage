@@ -47,7 +47,7 @@ int main(void)
 	
 	while(true)
 	{
-		uiController.display();
+		uiController.update();
 	}
 }
 

@@ -9,12 +9,14 @@
 #ifndef FANCONTROLLER_H_
 #define FANCONTROLLER_H_
 
+#include "Controller.h"
 #include "./../Devices/PWM/Fan.h"
 
-class FanController
+class FanController : public Controller
 {
 	public:
 		FanController(Fan* fan);
+        void update() override;
 	private:
 		Fan* fan;
 };

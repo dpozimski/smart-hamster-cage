@@ -9,12 +9,14 @@
 #ifndef FOODFEEDCONTROLLER_H_
 #define FOODFEEDCONTROLLER_H_
 
+#include "Controller.h"
 #include "../Devices/StepperMotor.h"
 
-class FoodFeedController
+class FoodFeedController : public Controller
 {
 	public:
 		FoodFeedController(StepperMotor* stepperMotor);
+        void update() override;
 	private:
 		StepperMotor* stepperMotor;	
 };

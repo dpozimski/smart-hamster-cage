@@ -9,10 +9,13 @@
 #ifndef UICONTROLLER_H_
 #define UICONTROLLER_H_
 
+#define TEXT_BUFFER_SIZE 512
+
+#include "Controller.h"
 #include "../Devices/I2C/OLED/OLED_Screen.h"
 #include <stdbool.h>
 
-class UIController
+class UIController : public Controller
 {
 	public:
 		UIController(OLEDScreen* view);
@@ -21,7 +24,7 @@ class UIController
 		void isWaterPumpWorking(bool value);
 		void isControlLedActive(bool value);
 		void isStepperMotorWorking(bool value);
-		void display();
+		void update() override;
 	private:
 		OLEDScreen* view;
 		uint8_t temperature;
@@ -29,6 +32,7 @@ class UIController
 		bool controlLedActive;
 		bool stepperMotorWorking;
 		bool waterPumpWorking;
+        char buffer[TEXT_BUFFER_SIZE];
 };
 
 

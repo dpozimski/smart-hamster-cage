@@ -11,3 +11,8 @@ FoodFeedController::FoodFeedController(StepperMotor* stepperMotor) : stepperMoto
 {
 
 }
+
+void FoodFeedController::update()
+{
+
+}
