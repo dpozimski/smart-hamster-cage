@@ -10,13 +10,10 @@
 
 void Fan::init()
 {
-    //WGM00 && WGM01 - Fast PWM
-    //COM00 && COM01 - Inverting mode
-    //CS000 && CS01 && CS03 - Prescaller / 8
-    TCCR0 |= (1<<WGM00) | (1<<WGM01) | (1<<COM00) | (1<<COM01) | (1<<CS01);
+    //timer is set in StepperMotorClock
 }
 
 void Fan::updatePwmRegister()
 {
-    OCR0 = this->value;
+    OCR1B = this->value;
 }

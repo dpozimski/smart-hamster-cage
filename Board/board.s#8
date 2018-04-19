@@ -17582,6 +17582,10 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="SUPPLY6" gate="GND" pin="GND"/>
 <wire x1="-76.2" y1="22.86" x2="-81.28" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="22.86" x2="-81.28" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="AGND"/>
+<wire x1="-76.2" y1="30.48" x2="-81.28" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="-81.28" y1="30.48" x2="-81.28" y2="22.86" width="0.1524" layer="91"/>
+<junction x="-81.28" y="22.86"/>
 </segment>
 <segment>
 <pinref part="KANDA" gate="G$1" pin="10"/>
@@ -17788,10 +17792,14 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="IC2" gate="G$1" pin="VCC"/>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 <wire x1="-76.2" y1="25.4" x2="-88.9" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="-88.9" y1="25.4" x2="-88.9" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="25.4" x2="-88.9" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="-88.9" y1="35.56" x2="-88.9" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-88.9" y1="25.4" x2="-88.9" y2="22.86" width="0.1524" layer="91"/>
 <junction x="-88.9" y="25.4"/>
+<pinref part="IC2" gate="G$1" pin="AREF"/>
+<wire x1="-76.2" y1="35.56" x2="-88.9" y2="35.56" width="0.1524" layer="91"/>
+<junction x="-88.9" y="35.56"/>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="AVCC"/>
@@ -17992,12 +18000,6 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="-17.78" y1="-116.84" x2="-17.78" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="(ADC3)PA3"/>
 <wire x1="-17.78" y1="43.18" x2="-35.56" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$26" class="0">
-<segment>
-<pinref part="IC2" gate="G$1" pin="(AIN0/INT2)PB2"/>
-<wire x1="-35.56" y1="17.78" x2="12.7" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$35" class="0">
@@ -18237,6 +18239,23 @@ Source: http://www.osram.convergy.de/</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="101,1,474.98,20.32,X2-2,KL,,,,"/>
+<approved hash="104,1,-76.2,33.02,IC2,AVCC,VCC,,,"/>
+<approved hash="104,1,-142.24,-124.46,U1,VDD,VCC,,,"/>
+<approved hash="104,1,251.46,-152.4,IC3,VS,VSS,,,"/>
+<approved hash="206,1,139.7,-172.72,GND,,,,,"/>
+<approved hash="206,1,139.7,-167.64,GND,,,,,"/>
+<approved hash="208,1,81.28,127,GND,sup,,,,"/>
+<approved hash="113,1,58.42,144.441,LM2596,,,,,"/>
+<approved hash="113,1,482.6,59.4953,KANDA,,,,,"/>
+<approved hash="113,1,-108.569,-83.6253,OLED_SSD3306_CON,,,,,"/>
+<approved hash="113,1,-124.071,71.12,S1,,,,,"/>
+<approved hash="113,1,457.522,-133.35,WP_LED,,,,,"/>
+<approved hash="113,1,457.522,-31.75,FAN_LED,,,,,"/>
+<approved hash="113,1,13.0217,-28.7956,CTRL_LED,,,,,"/>
+<approved hash="113,1,-45.3983,115.57,VSS_LED,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>

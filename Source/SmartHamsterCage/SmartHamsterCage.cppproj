@@ -235,6 +235,12 @@
     <Compile Include="Devices\StepperMotor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Devices\Timer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\Timer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Flow\Controller.h">
       <SubType>compile</SubType>
     </Compile>
