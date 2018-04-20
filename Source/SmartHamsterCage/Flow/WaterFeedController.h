@@ -17,7 +17,11 @@ class WaterFeedController : public Controller
 	public:
 		WaterFeedController(WaterPump* waterPump, Timer* timer);
         void update() override;
+        void setTemperature(uint8_t temperature);
 	private:
+        uint8_t getDurationOfWaterPouring(uint32_t elapsedSeconds);
+        uint8_t temperature;
+        uint32_t lastExceededTimeStamp;
 		WaterPump* waterPump;
 };
 

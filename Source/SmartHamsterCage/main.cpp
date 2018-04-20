@@ -20,6 +20,14 @@
 #include "Flow/FanController.h"
 #include "Flow/FoodFeedController.h"
 
+uint8_t getPwmValueFromTemperature(uint8_t vale)
+{
+    int16_t y2 = 255, y1 = 50;
+    int16_t x2 = 30, x1 = 26;
+    //linear function
+    uint8_t y = ( ((y2 - y1)/(x2 - x1)) * vale ) + ( ((x2 * y1) - (x1 * y2)) / (x2 - x1) );
+    return y;
+}
 
 int main(void)
 {
@@ -50,7 +58,25 @@ int main(void)
 	
 	while(true)
 	{
-    	uiController.update();
+        //get temperature measure
+    	uint8_t temperature = thermometer.getTemperature();
+        
+        //set updated values
+        fanController.setTemperature(temperature);
+        waterFeedController.setTemperature(temperature);
+        
+        //output devices work
+        fanController.update();
+        waterFeedController.update();
+        foodFeedController.update();
+        
+        //ui
+        uiController.setTemperature(temperature);
+        uiController.isControlLedActive(controlLed.readValue());
+        uiController.isFanWorking(fan.readValue());
+        uiController.isStepperMotorWorking(fan.readValue());
+        uiController.isWaterPumpWorking(fan.readValue());
+        uiController.update();
 	}
 }
 

@@ -11,6 +11,7 @@
 
 #include "Controller.h"
 #include "../Devices/StepperMotor.h"
+#include <stdbool.h>
 
 class FoodFeedController : public Controller
 {
@@ -19,6 +20,7 @@ class FoodFeedController : public Controller
         void update() override;
 	private:
 		StepperMotor* stepperMotor;	
+        uint32_t lastExceededTimeStamp;
 };
 
 

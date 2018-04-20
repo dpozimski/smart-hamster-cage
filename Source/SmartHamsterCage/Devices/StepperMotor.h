@@ -34,10 +34,10 @@ class StepperMotor : Device
         void setSpeed(uint8_t value);
         uint8_t readSpeed();
         void setSpeedMode(StepperMotorSpeedMode speedMode);
-        StepperMotorSpeedMode readSpeedMode();        
-    private:
+        StepperMotorSpeedMode readSpeedMode();   
         bool isEnabled();
-        void setEnabled(bool value);
+        void setEnabled(bool value);     
+    private:
         StepperMotorClock stepperMotorClock;
 };
 
