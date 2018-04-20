@@ -50,7 +50,7 @@ int main(void)
 	
 	while(true)
 	{
-		uiController.update();
+    	uiController.update();
 	}
 }
 

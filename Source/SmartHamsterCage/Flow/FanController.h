@@ -9,8 +9,8 @@
 #ifndef FANCONTROLLER_H_
 #define FANCONTROLLER_H_
 
-#include "Controller.h"
 #include "./../Devices/PWM/Fan.h"
+#include "Controller.h"
 
 class FanController : public Controller
 {

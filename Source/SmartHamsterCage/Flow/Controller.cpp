@@ -5,9 +5,16 @@
  *  Author: d.pozimski
  */ 
 
-Controller::Controller(Timer* timer) : timer(timer)
-{
+#include "Controller.h"
 
+Controller::Controller(Timer* timer)
+{
+    this->timer = timer;
+}
+
+void Controller::update()
+{
+    //blank
 }
 
 Timer* Controller::getTimer()

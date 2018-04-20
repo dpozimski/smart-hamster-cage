@@ -10,9 +10,9 @@
 #include <string.h>
 #include <stdio.h>
 
-UIController::UIController(OLEDScreen* view, Timer* timer) : Controller::Controller(timer), view(view)
+UIController::UIController(OLEDScreen* view, Timer* timer) : Controller::Controller(timer)
 {
-	
+	this->view = view;
 }
 
 void UIController::setTemperature(uint8_t value)

@@ -241,6 +241,9 @@
     <Compile Include="Devices\Timer.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Flow\Controller.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Flow\Controller.h">
       <SubType>compile</SubType>
     </Compile>

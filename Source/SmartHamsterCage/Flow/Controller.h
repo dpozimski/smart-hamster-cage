@@ -5,7 +5,6 @@
  *  Author: d.pozimski
  */ 
 
-
 #ifndef CONTROLLER_H_
 #define CONTROLLER_H_
 
@@ -15,7 +14,7 @@ class Controller
 {
     public:
         Controller(Timer* timer);
-        virtual void update() = 0;
+        virtual void update();
     protected:
         Timer* getTimer();
     private:
