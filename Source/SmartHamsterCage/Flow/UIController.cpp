@@ -7,9 +7,12 @@
 
 #include "UIController.h"
 
-UIController::UIController(OLEDScreen* view) : view(view)
+#include <string.h>
+#include <stdio.h>
+
+UIController::UIController(OLEDScreen* view, Timer* timer) : Controller::Controller(timer)
 {
-	
+	this->view = view;
 }
 
 void UIController::setTemperature(uint8_t value)
@@ -37,9 +40,17 @@ void UIController::isStepperMotorWorking(bool value)
 	this->stepperMotorWorking = value;
 }
 
-void UIController::display()
+void UIController::update()
 {
+    //clear buffer in screen
 	this->view->clearBuffer();
-	this->view->drawText(0, 0, (char*)"bla bla");
+    //clear buffers
+    memset(this->buffer, 0, TEXT_BUFFER_SIZE);
+    //place formatted text into the ready to go buffer
+    sprintf(this->buffer, 
+        "Current temperature: %d\nFan: %d\nWater pump: %d\nControl led: %d\nStepper motor: %d\n",
+        this->temperature, this->fanWorking, this->waterPumpWorking, this->controlLedActive, this->stepperMotorWorking);
+    //draw text
+	this->view->drawText(0, 0, this->buffer);
 	this->view->flush();
 }

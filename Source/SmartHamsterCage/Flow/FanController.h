@@ -10,13 +10,19 @@
 #define FANCONTROLLER_H_
 
 #include "./../Devices/PWM/Fan.h"
+#include "Controller.h"
 
-class FanController
+class FanController : public Controller
 {
 	public:
-		FanController(Fan* fan);
+		FanController(Fan* fan, Timer* timer);
+        void update() override;
+        void setTemperature(uint8_t temperature);
 	private:
+        uint8_t getPwmValueFromTemperature();
 		Fan* fan;
+        uint32_t lastExceededTimeStamp;
+        uint8_t temperature;
 };
 
 
