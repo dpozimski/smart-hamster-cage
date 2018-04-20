@@ -7,9 +7,9 @@
 
 #include "FoodFeedController.h"
 
-FoodFeedController::FoodFeedController(StepperMotor* stepperMotor) : stepperMotor(stepperMotor)
+FoodFeedController::FoodFeedController(StepperMotor* stepperMotor, Timer* timer) : Controller::Controller(timer)
 {
-
+    this->stepperMotor = stepperMotor;
 }
 
 void FoodFeedController::update()

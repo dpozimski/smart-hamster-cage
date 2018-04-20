@@ -15,7 +15,7 @@
 class FanController : public Controller
 {
 	public:
-		FanController(Fan* fan);
+		FanController(Fan* fan, Timer* timer);
         void update() override;
 	private:
 		Fan* fan;

@@ -9,10 +9,17 @@
 #ifndef CONTROLLER_H_
 #define CONTROLLER_H_
 
+#include "./../Devices/Timer.h"
+
 class Controller
 {
     public:
+        Controller(Timer* timer);
         virtual void update() = 0;
+    protected:
+        Timer* getTimer();
+    private:
+        Timer* timer;
 };
 
 

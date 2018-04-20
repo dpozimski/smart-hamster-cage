@@ -17,6 +17,8 @@ class Timer: public Device
     public:
         void init() override;
         uint32_t getElapsedSeconds();  
+        void incrementElapsedSeconds();
+    private:
         static uint32_t elapsedSeconds;  
 };
 

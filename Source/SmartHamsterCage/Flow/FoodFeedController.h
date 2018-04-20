@@ -15,7 +15,7 @@
 class FoodFeedController : public Controller
 {
 	public:
-		FoodFeedController(StepperMotor* stepperMotor);
+		FoodFeedController(StepperMotor* stepperMotor, Timer* timer);
         void update() override;
 	private:
 		StepperMotor* stepperMotor;	

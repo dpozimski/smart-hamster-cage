@@ -7,7 +7,7 @@
 
 #include "WaterFeedController.h"
 
-WaterFeedController::WaterFeedController(WaterPump* waterPump) : waterPump(waterPump)
+WaterFeedController::WaterFeedController(WaterPump* waterPump, Timer* timer) : Controller::Controller(timer), waterPump(waterPump)
 {
 
 }

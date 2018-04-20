@@ -14,6 +14,7 @@
 #include "Devices/I2C/Thermometer.h"
 #include "Devices/I2C/OLED/OLED_Screen.h"
 #include "Devices/StepperMotor.h"
+#include "Devices/Timer.h"
 #include "Flow/UIController.h"
 #include "Flow/WaterFeedController.h"
 #include "Flow/FanController.h"
@@ -32,6 +33,8 @@ int main(void)
 	StepperMotor stepperMotor;
 	Thermometer thermometer;
 	OLEDScreen oledScreen;
+    Timer timer;
+    timer.init();
 	fan.init();
 	waterPump.init();
 	controlLed.init();
@@ -40,10 +43,10 @@ int main(void)
 	thermometer.init();
 	
 	//Flow objects
-	UIController uiController(&oledScreen);
-	FanController fanController(&fan);
-	FoodFeedController foodFeedController(&stepperMotor);
-	WaterFeedController waterFeedController(&waterPump);
+	UIController uiController(&oledScreen, &timer);
+	FanController fanController(&fan, &timer);
+	FoodFeedController foodFeedController(&stepperMotor, &timer);
+	WaterFeedController waterFeedController(&waterPump, &timer);
 	
 	while(true)
 	{

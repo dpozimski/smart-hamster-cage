@@ -7,9 +7,9 @@
 
 #include "FanController.h"
 
-FanController::FanController(Fan* fan) : fan(fan)
+FanController::FanController(Fan* fan, Timer* timer) : Controller(timer)
 {
-    
+    this->fan = fan;
 }
 
 void FanController::update()
