@@ -17398,8 +17398,8 @@ Source: http://www.osram.convergy.de/</description>
 <part name="VSS_LED" library="led" deviceset="LED" device="5MM"/>
 <part name="U2" library="ds1621p" deviceset="DS1621+" device=""/>
 <part name="SUPPLY31" library="supply2" deviceset="GND" device=""/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="0207/12" value="330R"/>
-<part name="R8" library="rcl" deviceset="R-EU_" device="0207/12" value="330R"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="0207/12" value="4K7"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="0207/12" value="4K7"/>
 <part name="P+8" library="supply1" deviceset="VCC" device=""/>
 <part name="P+9" library="supply1" deviceset="VCC" device=""/>
 </parts>
@@ -18323,8 +18323,8 @@ Source: http://www.osram.convergy.de/</description>
 <approved hash="104,1,-76.2,30.48,IC2,AGND,GND,,,"/>
 <approved hash="104,1,-76.2,33.02,IC2,AVCC,VCC,,,"/>
 <approved hash="104,1,-76.2,35.56,IC2,AREF,VCC,,,"/>
-<approved hash="104,1,-142.24,-124.46,U1,VDD,VCC,,,"/>
 <approved hash="104,1,251.46,-152.4,IC3,VS,VSS,,,"/>
+<approved hash="104,1,-162.56,-127,U2,VDD,VCC,,,"/>
 <approved hash="206,1,139.7,-172.72,GND,,,,,"/>
 <approved hash="206,1,139.7,-167.64,GND,,,,,"/>
 <approved hash="208,1,-58.42,106.68,GND,sup,,,,"/>
@@ -18344,8 +18344,8 @@ Source: http://www.osram.convergy.de/</description>
 <approved hash="208,1,139.7,-167.64,GND,out,,,,"/>
 <approved hash="208,1,101.6,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,73.66,-154.94,GND,sup,,,,"/>
-<approved hash="208,1,-147.32,-144.78,GND,sup,,,,"/>
-<approved hash="208,1,-157.48,-144.78,GND,sup,,,,"/>
+<approved hash="208,1,-167.64,-144.78,GND,sup,,,,"/>
+<approved hash="208,1,-185.42,-144.78,GND,sup,,,,"/>
 <approved hash="208,1,215.9,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,256.54,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,436.88,-144.78,GND,sup,,,,"/>
@@ -18359,12 +18359,11 @@ Source: http://www.osram.convergy.de/</description>
 <approved hash="208,1,457.2,-40.64,GND,sup,,,,"/>
 <approved hash="208,1,12.7,-40.64,GND,sup,,,,"/>
 <approved hash="208,1,-45.72,106.68,GND,sup,,,,"/>
+<approved hash="208,1,-104.14,-144.78,GND,sup,,,,"/>
 <approved hash="113,1,58.42,144.441,LM2596,,,,,"/>
 <approved hash="113,1,482.6,59.4953,KANDA,,,,,"/>
 <approved hash="113,1,-108.569,-83.6253,OLED_SSD3306_CON,,,,,"/>
-<approved hash="113,1,421.64,3.53483,R1,,,,,"/>
 <approved hash="113,1,-124.071,71.12,S1,,,,,"/>
-<approved hash="113,1,421.64,-100.605,R5,,,,,"/>
 <approved hash="113,1,457.522,-133.35,WP_LED,,,,,"/>
 <approved hash="113,1,457.522,-31.75,FAN_LED,,,,,"/>
 <approved hash="113,1,13.0217,-28.7956,CTRL_LED,,,,,"/>

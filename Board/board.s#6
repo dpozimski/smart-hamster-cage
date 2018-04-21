@@ -18184,17 +18184,6 @@ Source: http://www.osram.convergy.de/</description>
 <wire x1="185.42" y1="-160.02" x2="220.98" y2="-160.02" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$5" class="0">
-<segment>
-<wire x1="406.4" y1="20.32" x2="406.4" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="406.4" y1="2.54" x2="416.56" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="406.4" y1="20.32" x2="-17.78" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="-17.78" y1="20.32" x2="-17.78" y2="-22.86" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="(OC1B)PD4"/>
-<wire x1="-17.78" y1="-22.86" x2="-35.56" y2="-22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="X2" gate="-1" pin="KL"/>
@@ -18315,6 +18304,17 @@ Source: http://www.osram.convergy.de/</description>
 <junction x="294.64" y="-172.72"/>
 <pinref part="D10" gate="G$1" pin="C"/>
 <wire x1="294.64" y1="-172.72" x2="294.64" y2="-185.42" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$31" class="0">
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<wire x1="416.56" y1="2.54" x2="15.24" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="2.54" x2="15.24" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="5.08" x2="-17.78" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="(OC1B)PD4"/>
+<wire x1="-17.78" y1="-22.86" x2="-35.56" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="5.08" x2="-17.78" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="8.7.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -18036,24 +18037,24 @@ Source: http://www.osram.convergy.de/</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="(ADC1)PA1"/>
-<wire x1="-35.56" y1="38.1" x2="-22.86" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="38.1" x2="-22.86" y2="-165.1" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-165.1" x2="83.82" y2="-165.1" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="-165.1" x2="83.82" y2="-165.1" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="L297" pin="CLOCK"/>
 <wire x1="104.14" y1="-160.02" x2="83.82" y2="-160.02" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="-160.02" x2="83.82" y2="-165.1" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="-165.1" x2="-27.94" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="(OC1A)PD5"/>
+<wire x1="-27.94" y1="-20.32" x2="-35.56" y2="-20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="IC2" gate="G$1" pin="(ADC2)PA2"/>
-<wire x1="-35.56" y1="40.64" x2="-20.32" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="40.64" x2="-20.32" y2="-167.64" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="-167.64" x2="86.36" y2="-167.64" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="-167.64" x2="86.36" y2="-167.64" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="-167.64" x2="86.36" y2="-165.1" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="L297" pin="ENABLE"/>
 <wire x1="86.36" y1="-165.1" x2="104.14" y2="-165.1" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="(ADC1)PA1"/>
+<wire x1="-22.86" y1="-167.64" x2="-22.86" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="38.1" x2="-35.56" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">
@@ -18061,10 +18062,10 @@ Source: http://www.osram.convergy.de/</description>
 <pinref part="IC1" gate="L297" pin="H/F"/>
 <wire x1="139.7" y1="-154.94" x2="149.86" y2="-154.94" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="-154.94" x2="149.86" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="-116.84" x2="-17.78" y2="-116.84" width="0.1524" layer="91"/>
-<wire x1="-17.78" y1="-116.84" x2="-17.78" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="(ADC3)PA3"/>
-<wire x1="-17.78" y1="43.18" x2="-35.56" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="-116.84" x2="-20.32" y2="-116.84" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="(ADC2)PA2"/>
+<wire x1="-20.32" y1="-116.84" x2="-20.32" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="40.64" x2="-35.56" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$35" class="0">
