@@ -17372,18 +17372,18 @@ manufacturer Siemens</description>
 <part name="Q3" library="transistor-small-signal" deviceset="BC639" device=""/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="0207/12" value="470R"/>
 <part name="SUPPLY22" library="supply2" deviceset="GND" device=""/>
-<part name="D3" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="D4" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="D5" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="D6" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
+<part name="D3" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
+<part name="D4" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
+<part name="D5" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
+<part name="D6" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
 <part name="SUPPLY13" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY21" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY23" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY24" library="supply2" deviceset="GND" device=""/>
-<part name="D7" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="D8" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="D9" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="D10" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
+<part name="D7" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
+<part name="D8" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
+<part name="D9" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
+<part name="D10" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5822"/>
 <part name="SUPPLY28" library="supply2" deviceset="GND" device=""/>
 <part name="C9" library="rcl" deviceset="C-EU" device="025-025X050" value="100nF"/>
 <part name="C10" library="resistor" deviceset="CPOL-EU" device="E5-10.5" value="22uF"/>
