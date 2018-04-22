@@ -8903,66 +8903,6 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="inductors">
-<description>&lt;b&gt;Inductors and Filters&lt;/b&gt;&lt;p&gt;
-Based on the previous library ind-a.lbr&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="DR127">
-<description>&lt;b&gt;High Power Density, High Efficiency, Shielded Inductors&lt;/b&gt;&lt;p&gt;
-Source: coiltronics_dr_series.pdf</description>
-<wire x1="-6.5" y1="6.5" x2="6.525" y2="6.5" width="0.2032" layer="21"/>
-<wire x1="6.525" y1="6.5" x2="6.525" y2="-6.5" width="0.2032" layer="21"/>
-<wire x1="6.525" y1="-6.5" x2="-6.5" y2="-6.5" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="-6.5" x2="-6.5" y2="6.5" width="0.2032" layer="21"/>
-<wire x1="-4.5254" y1="3.783" x2="-3.8006" y2="4.5431" width="1.016" layer="21" curve="-202.065586" cap="flat"/>
-<wire x1="-3.783" y1="-4.5254" x2="-4.5431" y2="-3.8006" width="1.016" layer="21" curve="-202.065586" cap="flat"/>
-<wire x1="4.5254" y1="-3.783" x2="3.8006" y2="-4.5431" width="1.016" layer="21" curve="-202.065586" cap="flat"/>
-<wire x1="3.783" y1="4.5254" x2="4.5431" y2="3.8006" width="1.016" layer="21" curve="-202.065586" cap="flat"/>
-<wire x1="0" y1="5.9" x2="4.9" y2="3.275" width="0.2032" layer="21" curve="-56.209779"/>
-<wire x1="0" y1="5.9" x2="-4.95" y2="3.225" width="0.2032" layer="21" curve="56.95663"/>
-<wire x1="0" y1="-5.9" x2="-4.9" y2="-3.275" width="0.2032" layer="21" curve="-56.209779"/>
-<wire x1="0" y1="-5.9" x2="4.95" y2="-3.225" width="0.2032" layer="21" curve="56.95663"/>
-<circle x="0" y="0" radius="5.9" width="0.2032" layer="51"/>
-<smd name="1" x="-4.975" y="0" dx="3.85" dy="5.5" layer="1"/>
-<smd name="2" x="4.975" y="0" dx="3.85" dy="5.5" layer="1"/>
-<text x="-2.5" y="3" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3" y="-4.5" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="DRK">
-<wire x1="-3.81" y1="1.651" x2="3.81" y2="1.651" width="0.254" layer="94"/>
-<text x="-3.81" y="2.286" size="1.778" layer="95">&gt;NAME</text>
-<text x="-3.937" y="-3.048" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-3.81" y1="-0.889" x2="3.81" y2="0.889" layer="94"/>
-<pin name="2" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="1" x="-7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="DR127" prefix="L">
-<description>&lt;b&gt;High Power Density, High Efficiency, Shielded Inductors&lt;/b&gt;&lt;p&gt;
-Source: coiltronics_dr_series.pdf</description>
-<gates>
-<gate name="G$1" symbol="DRK" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="DR127">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="SPICEPREFIX" value="L" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="avr-7">
 <description>&lt;b&gt;AVR Devices&lt;/b&gt;&lt;p&gt;
 Version 7 - August 1, 2011.&lt;br&gt;&lt;br&gt;
@@ -17295,6 +17235,66 @@ Source: http://www.osram.convergy.de/</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="inductors">
+<description>&lt;b&gt;Inductors and Filters&lt;/b&gt;&lt;p&gt;
+Based on the previous library ind-a.lbr&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="BC12">
+<description>&lt;B&gt;INDUCTOR&lt;/B&gt;&lt;p&gt;
+manufacturer Siemens</description>
+<wire x1="-5.334" y1="2.032" x2="5.334" y2="2.032" width="0.1524" layer="21"/>
+<wire x1="5.334" y1="-2.032" x2="-5.334" y2="-2.032" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="0" x2="6.096" y2="0" width="0.6096" layer="51"/>
+<wire x1="-6.096" y1="0" x2="-6.35" y2="0" width="0.6096" layer="51"/>
+<wire x1="-5.715" y1="-1.651" x2="-5.334" y2="-2.032" width="0.1524" layer="21" curve="90"/>
+<wire x1="5.334" y1="2.032" x2="5.715" y2="1.651" width="0.1524" layer="21" curve="-90"/>
+<wire x1="5.334" y1="-2.032" x2="5.715" y2="-1.651" width="0.1524" layer="21" curve="90"/>
+<wire x1="-5.715" y1="1.651" x2="-5.334" y2="2.032" width="0.1524" layer="21" curve="-90"/>
+<wire x1="5.715" y1="-1.651" x2="5.715" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="5.715" y1="0.762" x2="5.715" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="5.715" y1="0.762" x2="5.715" y2="1.651" width="0.1524" layer="21"/>
+<wire x1="-5.715" y1="0.762" x2="-5.715" y2="-0.762" width="0.1524" layer="51"/>
+<wire x1="-5.715" y1="0.762" x2="-5.715" y2="1.651" width="0.1524" layer="21"/>
+<wire x1="-5.715" y1="-1.651" x2="-5.715" y2="-0.762" width="0.1524" layer="21"/>
+<pad name="1" x="-6.35" y="0" drill="0.9144" shape="long"/>
+<pad name="2" x="6.35" y="0" drill="0.9144" shape="long"/>
+<text x="-5.842" y="2.159" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-4.445" y="-0.889" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="5.715" y1="-0.3048" x2="6.0198" y2="0.3048" layer="51"/>
+<rectangle x1="-6.0198" y1="-0.3048" x2="-5.715" y2="0.3048" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DRK">
+<wire x1="-3.81" y1="1.651" x2="3.81" y2="1.651" width="0.254" layer="94"/>
+<text x="-3.81" y="2.286" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.937" y="-3.048" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-3.81" y1="-0.889" x2="3.81" y2="0.889" layer="94"/>
+<pin name="2" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BC12" prefix="L">
+<description>&lt;B&gt;INDUCTOR&lt;/B&gt;</description>
+<gates>
+<gate name="G$1" symbol="DRK" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="BC12">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17316,7 +17316,6 @@ Source: http://www.osram.convergy.de/</description>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
 <part name="D1" library="diode" deviceset="1N581*" device="" technology="9-B" value="1N5824"/>
-<part name="L1" library="inductors" deviceset="DR127" device="" value="33uH"/>
 <part name="C2" library="resistor" deviceset="CPOL-EU" device="E5-10.5" value="220uF"/>
 <part name="SUPPLY4" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
@@ -17402,6 +17401,7 @@ Source: http://www.osram.convergy.de/</description>
 <part name="R8" library="rcl" deviceset="R-EU_" device="0207/12" value="4K7"/>
 <part name="P+8" library="supply1" deviceset="VCC" device=""/>
 <part name="P+9" library="supply1" deviceset="VCC" device=""/>
+<part name="L1" library="inductors" deviceset="BC12" device="" value="33uH"/>
 </parts>
 <sheets>
 <sheet>
@@ -17419,7 +17419,6 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="SUPPLY2" gate="GND" x="43.18" y="124.46"/>
 <instance part="SUPPLY3" gate="GND" x="58.42" y="124.46"/>
 <instance part="D1" gate="G$1" x="81.28" y="134.62" rot="R90"/>
-<instance part="L1" gate="G$1" x="93.98" y="149.86"/>
 <instance part="C2" gate="G$1" x="106.68" y="137.16"/>
 <instance part="SUPPLY4" gate="GND" x="81.28" y="124.46"/>
 <instance part="SUPPLY5" gate="GND" x="106.68" y="124.46"/>
@@ -17510,6 +17509,7 @@ Source: http://www.osram.convergy.de/</description>
 <instance part="R8" gate="G$1" x="-149.86" y="-78.74" rot="R90"/>
 <instance part="P+8" gate="VCC" x="-160.02" y="-60.96"/>
 <instance part="P+9" gate="VCC" x="-149.86" y="-60.96"/>
+<instance part="L1" gate="G$1" x="93.98" y="149.86"/>
 </instances>
 <busses>
 </busses>
@@ -17821,27 +17821,27 @@ Source: http://www.osram.convergy.de/</description>
 <net name="N$2" class="0">
 <segment>
 <pinref part="LM2596" gate="G$1" pin="OUT"/>
-<pinref part="L1" gate="G$1" pin="1"/>
 <wire x1="68.58" y1="149.86" x2="81.28" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="C"/>
-<wire x1="81.28" y1="149.86" x2="86.36" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="137.16" x2="81.28" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<wire x1="81.28" y1="149.86" x2="86.36" y2="149.86" width="0.1524" layer="91"/>
 <junction x="81.28" y="149.86"/>
 </segment>
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="L1" gate="G$1" pin="2"/>
-<wire x1="101.6" y1="149.86" x2="106.68" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="+"/>
-<wire x1="106.68" y1="149.86" x2="106.68" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
 <wire x1="106.68" y1="144.78" x2="106.68" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="149.86" x2="106.68" y2="162.56" width="0.1524" layer="91"/>
-<junction x="106.68" y="149.86"/>
+<wire x1="106.68" y1="144.78" x2="106.68" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="LM2596" gate="G$1" pin="FB"/>
+<wire x1="106.68" y1="149.86" x2="106.68" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="144.78" x2="106.68" y2="144.78" width="0.1524" layer="91"/>
 <junction x="106.68" y="144.78"/>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="101.6" y1="149.86" x2="106.68" y2="149.86" width="0.1524" layer="91"/>
+<junction x="106.68" y="149.86"/>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="VCC"/>
