@@ -7,17 +7,17 @@
 
 #include "Controller.h"
 
-Controller::Controller(Timer* timer)
-{
-    this->timer = timer;
-}
-
 void Controller::update()
 {
     //blank
 }
 
-Timer* Controller::getTimer()
+void Controller::setElapsedSeconds(uint32_t elapsedSeconds)
 {
-    return this->timer;
+    this->elapsedSeconds = elapsedSeconds;
+}
+
+uint32_t Controller::getElapsedSeconds()
+{
+    return this->elapsedSeconds;
 }

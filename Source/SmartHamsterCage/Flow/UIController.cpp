@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdio.h>
 
-UIController::UIController(OLEDScreen* view, Timer* timer) : Controller::Controller(timer)
+UIController::UIController(OLEDScreen* view)
 {
 	this->view = view;
 }

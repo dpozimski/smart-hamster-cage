@@ -51,10 +51,10 @@ int main(void)
 	thermometer.init();
 	
 	//Flow objects
-	UIController uiController(&oledScreen, &timer);
-	FanController fanController(&fan, &timer);
-	FoodFeedController foodFeedController(&stepperMotor, &timer);
-	WaterFeedController waterFeedController(&waterPump, &timer);
+	UIController uiController(&oledScreen);
+	FanController fanController(&fan);
+	FoodFeedController foodFeedController(&stepperMotor);
+	WaterFeedController waterFeedController(&waterPump);
     
 	while(true)
 	{  
@@ -62,11 +62,16 @@ int main(void)
         
         //get temperature measure
     	uint8_t temperature = thermometer.getTemperature();
+        uint32_t elapsedSeconds = timer.getElapsedSeconds();
         
         //set updated values
         fanController.setTemperature(temperature);
         waterFeedController.setTemperature(temperature);
-        fanController.setTemperature(temperature);
+        uiController.setTemperature(temperature);
+        fanController.setElapsedSeconds(elapsedSeconds);
+        waterFeedController.setElapsedSeconds(elapsedSeconds);
+        foodFeedController.setElapsedSeconds(elapsedSeconds);
+        uiController.setElapsedSeconds(elapsedSeconds);
         
         //output devices work
         fanController.update();
@@ -74,7 +79,6 @@ int main(void)
         foodFeedController.update();
         
         //ui
-        uiController.setTemperature(temperature);
         uiController.isControlLedActive(controlLed.readValue());
         uiController.isFanWorking(fan.readValue());
         uiController.isStepperMotorWorking(fan.readValue());

@@ -15,7 +15,7 @@
 class WaterFeedController : public Controller
 {
 	public:
-		WaterFeedController(WaterPump* waterPump, Timer* timer);
+		WaterFeedController(WaterPump* waterPump);
         void update() override;
         void setTemperature(uint8_t temperature);
 	private:

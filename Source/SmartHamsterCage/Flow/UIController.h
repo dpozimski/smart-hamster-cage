@@ -18,7 +18,7 @@
 class UIController : public Controller
 {
 	public:
-		UIController(OLEDScreen* view, Timer* timer);
+		UIController(OLEDScreen* view);
 		void setTemperature(uint8_t value);
 		void isFanWorking(bool value);
 		void isWaterPumpWorking(bool value);

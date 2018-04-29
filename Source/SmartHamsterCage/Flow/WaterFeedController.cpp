@@ -15,7 +15,7 @@
 
 #include "WaterFeedController.h"
 
-WaterFeedController::WaterFeedController(WaterPump* waterPump, Timer* timer) : Controller::Controller(timer)
+WaterFeedController::WaterFeedController(WaterPump* waterPump)
 {
     this->waterPump = waterPump;
     this->waterPump->setValue(0);
@@ -28,7 +28,7 @@ void WaterFeedController::setTemperature(uint8_t temperature)
 
 void WaterFeedController::update()
 {
-    uint32_t elapsedSeconds = this->getTimer()->getElapsedSeconds();
+    uint32_t elapsedSeconds = this->getElapsedSeconds();
     if(!(elapsedSeconds % this->getDurationOfWaterPouring(elapsedSeconds)) && !this->waterPump->readValue())
     {
         //turn on pouring

@@ -15,7 +15,7 @@
 class FanController : public Controller
 {
 	public:
-		FanController(Fan* fan, Timer* timer);
+		FanController(Fan* fan);
         void update() override;
         void setTemperature(uint8_t temperature);
 	private:

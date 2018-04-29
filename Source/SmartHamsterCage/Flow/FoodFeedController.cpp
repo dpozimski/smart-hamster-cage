@@ -11,7 +11,7 @@
 
 #include "FoodFeedController.h"
 
-FoodFeedController::FoodFeedController(StepperMotor* stepperMotor, Timer* timer) : Controller::Controller(timer)
+FoodFeedController::FoodFeedController(StepperMotor* stepperMotor)
 {
     this->stepperMotor = stepperMotor;
     this->stepperMotor->setEnabled(false);
@@ -22,7 +22,7 @@ FoodFeedController::FoodFeedController(StepperMotor* stepperMotor, Timer* timer)
 
 void FoodFeedController::update()
 {
-    uint32_t elapsedSeconds = this->getTimer()->getElapsedSeconds();
+    uint32_t elapsedSeconds = this->getElapsedSeconds();
     if(!(elapsedSeconds % FEED_CYCLIC_DURATION) && !this->stepperMotor->isEnabled())
     {
         //turn on feeder
