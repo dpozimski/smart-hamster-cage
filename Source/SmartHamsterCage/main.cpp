@@ -81,8 +81,8 @@ int main(void)
         //ui
         uiController.isControlLedActive(controlLed.readValue());
         uiController.isFanWorking(fan.readValue());
-        uiController.isStepperMotorWorking(fan.readValue());
-        uiController.isWaterPumpWorking(fan.readValue());
+        uiController.isStepperMotorWorking(stepperMotor.readSpeed());
+        uiController.isWaterPumpWorking(waterPump.readValue());
         uiController.update();
 	}
 }
