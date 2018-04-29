@@ -18,6 +18,7 @@
 FanController::FanController(Fan* fan)
 {
     this->fan = fan;
+    this->fan->setValue(0);
 }
 
 void FanController::setTemperature(uint8_t temperature)

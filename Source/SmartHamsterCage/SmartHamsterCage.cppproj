@@ -184,6 +184,12 @@
     <Compile Include="Devices\I2C\I2CDevice.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Devices\I2C\Lib\i2c_master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\Lib\i2c_master.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Devices\I2C\OLED\OLED_Fonts.h">
       <SubType>compile</SubType>
     </Compile>
@@ -293,6 +299,7 @@
   <ItemGroup>
     <Folder Include="Devices\I2C\" />
     <Folder Include="Devices" />
+    <Folder Include="Devices\I2C\Lib" />
     <Folder Include="Devices\I2C\OLED" />
     <Folder Include="Devices\PWM" />
     <Folder Include="Flow" />

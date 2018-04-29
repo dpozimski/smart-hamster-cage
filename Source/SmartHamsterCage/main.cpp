@@ -62,7 +62,6 @@ int main(void)
     
 	while(true)
 	{  
-        
         //get temperature measure
     	uint8_t temperature = thermometer.getTemperature();
         uint32_t elapsedSeconds = timer.getElapsedSeconds();

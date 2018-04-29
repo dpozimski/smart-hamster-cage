@@ -5,12 +5,11 @@
  *  Author: d.pozimski
  */ 
 
-#define DEFAULT_ADDRESS			0x4F
+#define DEFAULT_ADDRESS			0x90
 #define ACCESS_CONFIG			0xAC
 #define START_CONVERT			0xEE
 #define READ_TEMPERATURE		0xAA
 #define ONE_SHOOT				0x01
-#define CONTINOUS_CONVERSION	0x02
 #define DONE					0x80
 
 #include "Thermometer.h"
@@ -25,7 +24,7 @@ void Thermometer::init()
     this->I2CDevice::init();
 	
 	//configure module
-	uint8_t config = this->readByteFromRegistry(ACCESS_CONFIG) | CONTINOUS_CONVERSION;
+	uint8_t config = this->readByteFromRegistry(ACCESS_CONFIG) | ONE_SHOOT;
 	this->writeByteToRegistry(ACCESS_CONFIG, config);
 }
 
