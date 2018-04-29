@@ -3282,7 +3282,7 @@ design rules under a new name.</description>
 <param name="mdDrill" value="8mil"/>
 <param name="mdSmdStop" value="0mil"/>
 <param name="msWidth" value="50mil"/>
-<param name="msDrill" value="24mil"/>
+<param name="msDrill" value="0.497840625mm"/>
 <param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
@@ -4688,6 +4688,7 @@ design rules under a new name.</description>
 <approved hash="3,1,689e83a343a4a899"/>
 <approved hash="3,1,e7a6ab9b6b9c27a1"/>
 <approved hash="3,1,36ed1ad0dad5f6e8"/>
+<approved hash="3,16,7e52c7b8c79d7e77"/>
 </errors>
 </board>
 </drawing>

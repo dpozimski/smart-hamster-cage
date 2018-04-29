@@ -3488,9 +3488,6 @@ design rules under a new name.</description>
 <attribute name="OC_FARNELL" value="176432" x="12.99" y="-114.21" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="OC_NEWARK" value="36M3542" x="12.99" y="-114.21" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C5" library="rcl" package="C025-025X050" value="100nF" x="20.3" y="-114.8" rot="R90">
-<attribute name="SPICEPREFIX" value="C" x="20.3" y="-114.8" size="1.778" layer="27" rot="R90" display="off"/>
-</element>
 <element name="X1" library="con-ptr500" package="AK500/2" value="WATER_PUMP" x="112.68" y="-114.3">
 <attribute name="MF" value="" x="112.68" y="-114.3" size="1.778" layer="27" display="off"/>
 <attribute name="MPN" value="" x="112.68" y="-114.3" size="1.778" layer="27" display="off"/>
@@ -3582,7 +3579,6 @@ design rules under a new name.</description>
 <contactref element="OLED_SSD3306_CON" pad="2"/>
 <contactref element="S1" pad="3"/>
 <contactref element="S1" pad="4"/>
-<contactref element="C5" pad="2"/>
 <contactref element="IC1" pad="11"/>
 <contactref element="IC1" pad="13"/>
 <contactref element="IC1" pad="14"/>
@@ -3750,7 +3746,6 @@ design rules under a new name.</description>
 <wire x1="-0.5" y1="-93.5" x2="-0.73" y2="-94" width="1.27" layer="1"/>
 <wire x1="18" y1="-113.5" x2="20" y2="-113.5" width="1.27" layer="1"/>
 <wire x1="16.5" y1="-112" x2="18" y2="-113.5" width="1.27" layer="1"/>
-<wire x1="20" y1="-113.5" x2="20.3" y2="-113.53" width="1.27" layer="1"/>
 <wire x1="16.5" y1="-112" x2="16.2412" y2="-111.9494" width="1.27" layer="1"/>
 <wire x1="16" y1="-112" x2="10" y2="-112" width="1.27" layer="1"/>
 <wire x1="10" y1="-112" x2="9.7388" y2="-111.9494" width="1.27" layer="1"/>
@@ -3759,7 +3754,6 @@ design rules under a new name.</description>
 <wire x1="20.5" y1="-113" x2="23.25" y2="-110.25" width="1.27" layer="1"/>
 <wire x1="23.25" y1="-110.25" x2="27.5" y2="-106" width="1.27" layer="1"/>
 <wire x1="27.5" y1="-97.5" x2="27.67" y2="-97.22" width="1.27" layer="1"/>
-<wire x1="20.5" y1="-113" x2="20.3" y2="-113.53" width="1.27" layer="1"/>
 <wire x1="9.5" y1="-111.5" x2="0" y2="-111.5" width="1.27" layer="1"/>
 <wire x1="0" y1="-111.5" x2="-0.73" y2="-112" width="1.27" layer="1"/>
 <wire x1="9.5" y1="-111.5" x2="9.7388" y2="-111.9494" width="1.27" layer="1"/>
@@ -3783,6 +3777,7 @@ design rules under a new name.</description>
 <via x="45.5" y="-106" extent="1-16" drill="0.6096"/>
 <via x="72" y="-66.5" extent="1-16" drill="0.6096"/>
 <via x="40.5" y="-110.5" extent="1-16" drill="0.6096"/>
+<wire x1="20" y1="-113.5" x2="20.5" y2="-113" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VCC">
 <contactref element="C2" pad="+"/>
@@ -4076,11 +4071,9 @@ design rules under a new name.</description>
 <contactref element="S1" pad="2"/>
 <contactref element="S1" pad="1"/>
 <contactref element="R2" pad="1"/>
-<contactref element="C5" pad="1"/>
 <contactref element="IC2" pad="9"/>
 <contactref element="KANDA" pad="5"/>
 <wire x1="16.5" y1="-116" x2="20" y2="-116" width="1.27" layer="1"/>
-<wire x1="20" y1="-116" x2="20.3" y2="-116.07" width="1.27" layer="1"/>
 <wire x1="16.5" y1="-116" x2="16.2412" y2="-116.4706" width="1.27" layer="1"/>
 <wire x1="16" y1="-116.5" x2="10" y2="-116.5" width="1.27" layer="1"/>
 <wire x1="10" y1="-116.5" x2="9.7388" y2="-116.4706" width="1.27" layer="1"/>
@@ -4106,9 +4099,9 @@ design rules under a new name.</description>
 <wire x1="77" y1="-87.5" x2="78" y2="-87.5" width="1.27" layer="16"/>
 <wire x1="66.5" y1="-77" x2="77" y2="-87.5" width="1.27" layer="16"/>
 <wire x1="66.5" y1="-74" x2="66.5" y2="-77" width="1.27" layer="16"/>
-<wire x1="20.5" y1="-116.5" x2="20.3" y2="-116.07" width="1.27" layer="1"/>
 <wire x1="66.5" y1="-74" x2="66.62" y2="-73.57" width="1.27" layer="16"/>
 <via x="77.5" y="-103.5" extent="1-16" drill="0.6096"/>
+<wire x1="20.5" y1="-116.5" x2="20" y2="-116" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$12">
 <contactref element="IC2" pad="21"/>
