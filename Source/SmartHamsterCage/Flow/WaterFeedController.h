@@ -10,19 +10,20 @@
 #define WATERFEEDCONTROLLER_H_
 
 #include "Controller.h"
+#include "./../Utils/OutputTimeRule.h"
 #include "./../Devices/PWM/WaterPump.h"
 
 class WaterFeedController : public Controller
 {
 	public:
-		WaterFeedController(WaterPump* waterPump);
+		WaterFeedController(WaterPump* waterPump, OutputTimeRule* outputTimeRule);
         void update() override;
         void setTemperature(uint8_t temperature);
 	private:
         uint8_t getDurationOfWaterPouring(uint32_t elapsedSeconds);
-        uint8_t temperature;
-        uint32_t lastExceededTimeStamp;
+        uint8_t temperature = 0;
 		WaterPump* waterPump;
+        OutputTimeRule* outputTimeRule;
 };
 
 

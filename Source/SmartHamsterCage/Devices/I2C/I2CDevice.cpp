@@ -12,12 +12,13 @@
 #include <util/twi.h>
 #include "I2CDevice.h"
 #include "./../../Utils/GlobalDefs.h"
+#include "./../ControlLed.h"
 
 bool I2CDevice::busInitialized = false;
 
 I2CDevice::I2CDevice(uint8_t address) 
 {
-	this->address = address << 1;
+	this->address = address;
 }
 
 void I2CDevice::init()
@@ -66,7 +67,7 @@ bool I2CDevice::receive(uint8_t* data, uint16_t length)
 bool I2CDevice::writeToRegistry(uint8_t regAddr, uint8_t* data, uint16_t length)
 {
 	if (this->beginTransmission(true)) 
-		return true;
+        return true;     
 
 	this->write(regAddr);
 
@@ -144,7 +145,8 @@ bool I2CDevice::beginTransmission(bool isWriteMode)
 
     // check if the start condition was successfully transmitted
     if((TWSR & 0xF8) != TW_START)
-        return true;
+        return true;      
+        
 
     // load slave address into data register
     TWDR = isWriteMode ? (address | I2C_WRITE) : (address | I2C_READ);
@@ -154,7 +156,14 @@ bool I2CDevice::beginTransmission(bool isWriteMode)
 
     // check if the device has acknowledged the READ / WRITE mode
     uint8_t twst = TW_STATUS & 0xF8;
-    return (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK);
+    uint8_t value = (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK);
+    if(value)
+    {
+        ControlLed led;
+        led.init();
+        led.signal();
+    }
+    return value;
 }
 
 uint8_t I2CDevice::readWithAck()

@@ -283,6 +283,12 @@
     <Compile Include="Utils\GlobalDefs.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Utils\OutputTimeRule.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utils\OutputTimeRule.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Devices\I2C\" />

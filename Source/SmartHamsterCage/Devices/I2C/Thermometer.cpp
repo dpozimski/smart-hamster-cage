@@ -5,7 +5,7 @@
  *  Author: d.pozimski
  */ 
 
-#define DEFAULT_ADDRESS			0x90
+#define DEFAULT_ADDRESS			0x4F
 #define ACCESS_CONFIG			0xAC
 #define START_CONVERT			0xEE
 #define READ_TEMPERATURE		0xAA

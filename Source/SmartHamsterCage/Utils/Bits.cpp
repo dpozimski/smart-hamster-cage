@@ -2,7 +2,7 @@
  * Bits.cpp
  *
  * Created: 29.04.2018 13:14:27
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 #include "Bits.h"

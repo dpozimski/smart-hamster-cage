@@ -18,7 +18,7 @@ class Controller
     protected:
         uint32_t getElapsedSeconds();
     private:
-        uint32_t elapsedSeconds;
+        uint32_t elapsedSeconds = 0;
 };
 
 

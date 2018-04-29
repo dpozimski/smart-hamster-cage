@@ -15,8 +15,9 @@
 
 void StepperMotor::init()
 {
-	this->stepperMotorClock.init();
     DDRA |= (1 << SP_DIR) | (1 << SP_HALF_FULL_MODE) | (1 << SP_ENABLE);
+    
+	this->stepperMotorClock.init();
 	this->setDirection(StepperMotorDirection::RIGHT);
 	this->setSpeedMode(StepperMotorSpeedMode::HALF);
 	this->setEnabled(false);

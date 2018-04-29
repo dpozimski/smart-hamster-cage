@@ -10,17 +10,18 @@
 #define FOODFEEDCONTROLLER_H_
 
 #include "Controller.h"
+#include "./../Utils/OutputTimeRule.h"
 #include "../Devices/StepperMotor.h"
 #include <stdbool.h>
 
 class FoodFeedController : public Controller
 {
 	public:
-		FoodFeedController(StepperMotor* stepperMotor);
+		FoodFeedController(StepperMotor* stepperMotor, OutputTimeRule* outputTimeRule);
         void update() override;
 	private:
-		StepperMotor* stepperMotor;	
-        uint32_t lastExceededTimeStamp;
+		StepperMotor* stepperMotor;
+        OutputTimeRule* outputTimeRule;
 };
 
 

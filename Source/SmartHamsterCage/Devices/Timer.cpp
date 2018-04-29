@@ -16,8 +16,7 @@ ISR (TIMER0_COMP_vect)
     static uint8_t cnt = 0;
     if(cnt++ >= TICKS_TO_SECOND)
     {
-        Timer timer;
-        timer.incrementElapsedSeconds();
+        Timer::incrementElapsedSeconds();
         cnt = 0;   
     }
 }
@@ -43,5 +42,5 @@ uint32_t Timer::getElapsedSeconds()
 
 void Timer::incrementElapsedSeconds()
 {
-    this->elapsedSeconds++;
+    Timer::elapsedSeconds++;
 }

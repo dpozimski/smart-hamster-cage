@@ -21,7 +21,7 @@ class PWMDevice : public Device
         virtual void updatePwmRegister(uint8_t value) = 0;
     private:
         uint8_t reverseValue(uint8_t value);
-        uint8_t value;
+        uint8_t value = 0;
 };
 
 #endif /* PWMDEVICE_H_ */

@@ -2,7 +2,7 @@
  * Bits.h
  *
  * Created: 29.04.2018 13:12:08
- *  Author: dpsol
+ *  Author: d.pozimski
  */ 
 
 

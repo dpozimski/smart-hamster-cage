@@ -21,8 +21,8 @@ class FanController : public Controller
 	private:
         uint8_t getPwmValueFromTemperature();
 		Fan* fan;
-        uint32_t lastExceededTimeStamp;
-        uint8_t temperature;
+        uint32_t lastExceededTimeStamp = 0;
+        uint8_t temperature = 0;
 };
 
 
