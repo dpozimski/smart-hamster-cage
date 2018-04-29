@@ -11,7 +11,7 @@
 
 #include <util/twi.h>
 #include "I2CDevice.h"
-#include "./../../GlobalDefs.h"
+#include "./../../Utils/GlobalDefs.h"
 
 bool I2CDevice::busInitialized = false;
 

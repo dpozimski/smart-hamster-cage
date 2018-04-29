@@ -10,6 +10,7 @@
 #define SP_HALF_FULL_MODE PA2
 
 #include "StepperMotor.h"
+#include "./../Utils/Bits.h"
 #include <avr/io.h>
 
 void StepperMotor::init()
@@ -23,40 +24,40 @@ void StepperMotor::init()
 
 void StepperMotor::setDirection(StepperMotorDirection direction)
 {
-    PORTA &= ~(direction << SP_DIR);
+    Bits::setPortValue(&PORTA, SP_DIR, direction);
 }
 
 StepperMotorDirection StepperMotor::readDirection()
 {
-    return static_cast<StepperMotorDirection>(bit_is_set(PINA, SP_DIR));
+    return static_cast<StepperMotorDirection>(Bits::readPinValue(&PINA, SP_DIR));
 }
 
-void StepperMotor::setSpeed(uint8_t value)
+void StepperMotor::setSpeed(uint16_t value)
 {
     this->stepperMotorClock.setValue(value);
 }
 
-uint8_t StepperMotor::readSpeed()
+uint16_t StepperMotor::readSpeed()
 {
     return this->stepperMotorClock.readValue();
 }
 
 void StepperMotor::setSpeedMode(StepperMotorSpeedMode speedMode)
 {
-    PORTA &= ~(speedMode << SP_HALF_FULL_MODE);
+    Bits::setPortValue(&PORTA, SP_HALF_FULL_MODE, speedMode);
 }
 
 StepperMotorSpeedMode StepperMotor::readSpeedMode()
 {
-    return static_cast<StepperMotorSpeedMode>(bit_is_set(PINA, SP_HALF_FULL_MODE));
+    return static_cast<StepperMotorSpeedMode>(Bits::readPinValue(&PINA, SP_HALF_FULL_MODE));
 }
 
 void StepperMotor::setEnabled(bool value)
 {
-    PORTA &= ~(value << SP_ENABLE);
+    Bits::setPortValue(&PORTA, SP_ENABLE, value);
 }
 
 bool StepperMotor::isEnabled()
 {
-    return bit_is_set(PINA, SP_ENABLE);
+    return Bits::readPinValue(&PINA, SP_ENABLE);
 }

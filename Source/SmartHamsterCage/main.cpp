@@ -55,15 +55,18 @@ int main(void)
 	FanController fanController(&fan, &timer);
 	FoodFeedController foodFeedController(&stepperMotor, &timer);
 	WaterFeedController waterFeedController(&waterPump, &timer);
-	
+    
 	while(true)
-	{
+	{  
+        controlLed.signal();
+        
         //get temperature measure
     	uint8_t temperature = thermometer.getTemperature();
         
         //set updated values
         fanController.setTemperature(temperature);
         waterFeedController.setTemperature(temperature);
+        fanController.setTemperature(temperature);
         
         //output devices work
         fanController.update();

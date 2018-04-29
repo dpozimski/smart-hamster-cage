@@ -7,10 +7,12 @@
 
 #include "PWMDevice.h"
 
+#define BITS_IN_UINT16 16
+
 void PWMDevice::setValue(uint8_t value)
 {
     this->value = value;
-    this->updatePwmRegister();
+    this->updatePwmRegister(~value);
 }
 
 uint8_t PWMDevice::readValue()

@@ -18,7 +18,9 @@ class PWMDevice : public Device
         void setValue(uint8_t value);
         uint8_t readValue();
     protected:
-        virtual void updatePwmRegister() = 0;
+        virtual void updatePwmRegister(uint8_t value) = 0;
+    private:
+        uint8_t reverseValue(uint8_t value);
         uint8_t value;
 };
 

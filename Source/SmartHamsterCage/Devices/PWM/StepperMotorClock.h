@@ -16,7 +16,7 @@ class StepperMotorClock : public PWMDevice
     public:
         void init() override;
     protected:
-        void updatePwmRegister() override;
+        void updatePwmRegister(uint8_t value) override;
 };
 
 

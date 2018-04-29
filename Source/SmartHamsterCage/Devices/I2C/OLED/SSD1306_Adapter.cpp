@@ -44,12 +44,16 @@
 #define CS_PIN PC2
 
 #include "SSD1306_Adapter.h"
+#include "./../../../Utils/Bits.h"
 #include <avr/io.h>
 
 SSD1306Adapter::SSD1306Adapter() : I2CDevice(DEFAULT_ADDRESS)
 {
 	DDRC |= (1 << RES_PIN) | (1 << DC_PIN) | (1 << CS_PIN);
-	PORTC &= ~(1 << RES_PIN) & ~(0 << DC_PIN) & ~(1 << CS_PIN);
+    
+    Bits::setPortValue(&PORTC, RES_PIN, 1);
+    Bits::setPortValue(&PORTC, DC_PIN, 0);
+    Bits::setPortValue(&PORTC, CS_PIN, 1);
 }
 
 void SSD1306Adapter::init()

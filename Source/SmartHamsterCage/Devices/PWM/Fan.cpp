@@ -10,10 +10,14 @@
 
 void Fan::init()
 {
-    //timer is set in StepperMotorClock
+    /* PWM mode etc is set in StepperMotorClock */
+    //Set OC1A pin as an output
+    DDRD |= (1 << PD4);
+    //COM1B1 && COM1B0 - Inverting mode
+    TCCR1A |= (1<<COM1B1) | (1<<COM1B0);
 }
 
-void Fan::updatePwmRegister()
+void Fan::updatePwmRegister(uint8_t value)
 {
-    OCR1B = this->value;
+    OCR1B = value;
 }

@@ -9,10 +9,12 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+#define TICKS_TO_SECOND 100
+
 ISR (TIMER0_COMP_vect)
 {
     static uint8_t cnt = 0;
-    if(cnt++ >= 100)
+    if(cnt++ >= TICKS_TO_SECOND)
     {
         Timer timer;
         timer.incrementElapsedSeconds();
