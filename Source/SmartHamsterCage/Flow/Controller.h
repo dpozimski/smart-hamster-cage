@@ -13,12 +13,12 @@
 class Controller
 {
     public:
-        Controller(Timer* timer);
         virtual void update();
+        void setElapsedSeconds(uint32_t elapsedSeconds);
     protected:
-        Timer* getTimer();
+        uint32_t getElapsedSeconds();
     private:
-        Timer* timer;
+        uint32_t elapsedSeconds = 0;
 };
 
 

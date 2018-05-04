@@ -15,9 +15,10 @@
 #define LOWEST_PWM_VALUE 50
 #define HIGHEST_PWM_VALUE 255
 
-FanController::FanController(Fan* fan, Timer* timer) : Controller::Controller(timer)
+FanController::FanController(Fan* fan)
 {
     this->fan = fan;
+    this->fan->setValue(0);
 }
 
 void FanController::setTemperature(uint8_t temperature)
@@ -29,11 +30,11 @@ void FanController::update()
 {
     if(this->temperature >= HIGHEST_ALLOWED_TEMP)
     {
-        this->lastExceededTimeStamp = this->getTimer()->getElapsedSeconds();
+        this->lastExceededTimeStamp = this->getElapsedSeconds();
         uint8_t pwmValue = this->getPwmValueFromTemperature();
         this->fan->setValue(pwmValue);
     }
-    else if(((this->getTimer()->getElapsedSeconds() - this->lastExceededTimeStamp) < HYSTHERESIS_SECONDS) && 
+    else if(((this->getElapsedSeconds() - this->lastExceededTimeStamp) < HYSTHERESIS_SECONDS) && 
             (this->temperature >= LOWER_RANGE_HYSTHERESIS))
     {
         this->fan->setValue(LOWEST_PWM_VALUE);

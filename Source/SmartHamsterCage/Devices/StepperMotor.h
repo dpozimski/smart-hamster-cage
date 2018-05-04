@@ -31,8 +31,8 @@ class StepperMotor : Device
         void init() override;
         void setDirection(StepperMotorDirection direction);
         StepperMotorDirection readDirection();
-        void setSpeed(uint8_t value);
-        uint8_t readSpeed();
+        void setSpeed(uint16_t value);
+        uint16_t readSpeed();
         void setSpeedMode(StepperMotorSpeedMode speedMode);
         StepperMotorSpeedMode readSpeedMode();   
         bool isEnabled();

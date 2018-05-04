@@ -18,7 +18,7 @@
 class UIController : public Controller
 {
 	public:
-		UIController(OLEDScreen* view, Timer* timer);
+		UIController(OLEDScreen* view);
 		void setTemperature(uint8_t value);
 		void isFanWorking(bool value);
 		void isWaterPumpWorking(bool value);
@@ -27,11 +27,11 @@ class UIController : public Controller
 		void update() override;
 	private:
 		OLEDScreen* view;
-		uint8_t temperature;
-		bool fanWorking;
-		bool controlLedActive;
-		bool stepperMotorWorking;
-		bool waterPumpWorking;
+		uint8_t temperature = 0;
+		bool fanWorking = false;
+		bool controlLedActive = false;
+		bool stepperMotorWorking = false;
+		bool waterPumpWorking = false;
         char buffer[TEXT_BUFFER_SIZE];
 };
 

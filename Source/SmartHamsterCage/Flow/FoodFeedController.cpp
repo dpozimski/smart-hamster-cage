@@ -11,27 +11,31 @@
 
 #include "FoodFeedController.h"
 
-FoodFeedController::FoodFeedController(StepperMotor* stepperMotor, Timer* timer) : Controller::Controller(timer)
+FoodFeedController::FoodFeedController(StepperMotor* stepperMotor, OutputTimeRule* outputTimeRule)
 {
+    this->outputTimeRule = outputTimeRule;
     this->stepperMotor = stepperMotor;
     this->stepperMotor->setEnabled(false);
-    this->stepperMotor->setSpeed(ROTATE_PWM_VALUE);
+    this->stepperMotor->setSpeed(0);
     this->stepperMotor->setSpeedMode(StepperMotorSpeedMode::HALF);
     this->stepperMotor->setDirection(StepperMotorDirection::RIGHT);
 }
 
 void FoodFeedController::update()
 {
-    uint32_t elapsedSeconds = this->getTimer()->getElapsedSeconds();
-    if(!(elapsedSeconds % FEED_CYCLIC_DURATION) && !this->stepperMotor->isEnabled())
+    uint32_t elapsedSeconds = this->getElapsedSeconds();
+    this->outputTimeRule->update(elapsedSeconds, FEED_DURATION, FEED_CYCLIC_DURATION);
+    
+    if(this->outputTimeRule->isOutputShouldBeEnabled() && !this->stepperMotor->isEnabled())
     {
         //turn on feeder
         this->stepperMotor->setEnabled(true);
-        this->lastExceededTimeStamp = elapsedSeconds;
+        this->stepperMotor->setSpeed(ROTATE_PWM_VALUE);
     }
-    else if(((elapsedSeconds - this->lastExceededTimeStamp) >= FEED_DURATION) && this->stepperMotor->isEnabled())
+    else if(!this->outputTimeRule->isOutputShouldBeEnabled() && this->stepperMotor->isEnabled())
     {
         //turn off feeder
-        this->stepperMotor->setSpeed(false);
+        this->stepperMotor->setEnabled(false);
+        this->stepperMotor->setSpeed(0);
     }
 }

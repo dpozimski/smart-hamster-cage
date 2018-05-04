@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdio.h>
 
-UIController::UIController(OLEDScreen* view, Timer* timer) : Controller::Controller(timer)
+UIController::UIController(OLEDScreen* view)
 {
 	this->view = view;
 }
@@ -42,9 +42,8 @@ void UIController::isStepperMotorWorking(bool value)
 
 void UIController::update()
 {
-    //clear buffer in screen
-	this->view->clearBuffer();
     //clear buffers
+	this->view->clearBuffer(); 
     memset(this->buffer, 0, TEXT_BUFFER_SIZE);
     //place formatted text into the ready to go buffer
     sprintf(this->buffer, 

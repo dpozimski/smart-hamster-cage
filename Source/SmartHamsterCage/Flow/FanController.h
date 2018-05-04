@@ -15,14 +15,14 @@
 class FanController : public Controller
 {
 	public:
-		FanController(Fan* fan, Timer* timer);
+		FanController(Fan* fan);
         void update() override;
         void setTemperature(uint8_t temperature);
 	private:
         uint8_t getPwmValueFromTemperature();
 		Fan* fan;
-        uint32_t lastExceededTimeStamp;
-        uint8_t temperature;
+        uint32_t lastExceededTimeStamp = 0;
+        uint8_t temperature = 0;
 };
 
 

@@ -184,6 +184,12 @@
     <Compile Include="Devices\I2C\I2CDevice.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Devices\I2C\Lib\i2c_master.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\Lib\i2c_master.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Devices\I2C\OLED\OLED_Fonts.h">
       <SubType>compile</SubType>
     </Compile>
@@ -274,16 +280,30 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="GlobalDefs.h">
+    <Compile Include="Utils\Bits.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utils\Bits.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utils\GlobalDefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utils\OutputTimeRule.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Utils\OutputTimeRule.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Devices\I2C\" />
     <Folder Include="Devices" />
+    <Folder Include="Devices\I2C\Lib" />
     <Folder Include="Devices\I2C\OLED" />
     <Folder Include="Devices\PWM" />
     <Folder Include="Flow" />
+    <Folder Include="Utils" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

@@ -40,30 +40,40 @@ int main(void)
 	ControlLed controlLed;
 	StepperMotor stepperMotor;
 	Thermometer thermometer;
-	OLEDScreen oledScreen;
+	//OLEDScreen oledScreen;
     Timer timer;
     timer.init();
 	fan.init();
 	waterPump.init();
 	controlLed.init();
 	stepperMotor.init();
-	oledScreen.init();
+	//oledScreen.init();
 	thermometer.init();
+    
+    //Rule objects
+    OutputTimeRule waterFeedTimeRule;
+    OutputTimeRule foodFeedTimeRule;
 	
 	//Flow objects
-	UIController uiController(&oledScreen, &timer);
-	FanController fanController(&fan, &timer);
-	FoodFeedController foodFeedController(&stepperMotor, &timer);
-	WaterFeedController waterFeedController(&waterPump, &timer);
-	
+	//UIController uiController(&oledScreen);
+	FanController fanController(&fan);
+	FoodFeedController foodFeedController(&stepperMotor, &foodFeedTimeRule);
+	WaterFeedController waterFeedController(&waterPump, &waterFeedTimeRule);
+    
 	while(true)
-	{
+	{  
         //get temperature measure
     	uint8_t temperature = thermometer.getTemperature();
+        uint32_t elapsedSeconds = timer.getElapsedSeconds();
         
         //set updated values
         fanController.setTemperature(temperature);
         waterFeedController.setTemperature(temperature);
+        //uiController.setTemperature(temperature);
+        fanController.setElapsedSeconds(elapsedSeconds);
+        waterFeedController.setElapsedSeconds(elapsedSeconds);
+        foodFeedController.setElapsedSeconds(elapsedSeconds);
+        //uiController.setElapsedSeconds(elapsedSeconds);
         
         //output devices work
         fanController.update();
@@ -71,12 +81,11 @@ int main(void)
         foodFeedController.update();
         
         //ui
-        uiController.setTemperature(temperature);
-        uiController.isControlLedActive(controlLed.readValue());
-        uiController.isFanWorking(fan.readValue());
-        uiController.isStepperMotorWorking(fan.readValue());
-        uiController.isWaterPumpWorking(fan.readValue());
-        uiController.update();
+        //uiController.isControlLedActive(controlLed.readValue());
+        //uiController.isFanWorking(fan.readValue());
+        //uiController.isStepperMotorWorking(stepperMotor.readSpeed());
+        //uiController.isWaterPumpWorking(waterPump.readValue());
+        //uiController.update();
 	}
 }
 
