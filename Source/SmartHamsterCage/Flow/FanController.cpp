@@ -51,7 +51,7 @@ uint8_t FanController::getPwmValueFromTemperature()
     int32_t y2 = HIGHEST_PWM_VALUE, y1 = LOWEST_PWM_VALUE;
     int32_t x2 = TEMP_WITH_MAX_FAN_SPEED, x1 = HIGHEST_ALLOWED_TEMP;
     //linear function
-    uint8_t y = ( ((y2 - y1)/(x2 - x1)) * this->temperature ) + ( ((x2 * y1) - (x1 * y2)) / (x2 - x1) ); 
+    int32_t y = ( ((y2 - y1)/(x2 - x1)) * this->temperature ) + ( ((x2 * y1) - (x1 * y2)) / (x2 - x1) ); 
     //check higher limit
     if(y > HIGHEST_PWM_VALUE)
         y = HIGHEST_PWM_VALUE;

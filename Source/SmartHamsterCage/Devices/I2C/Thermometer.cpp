@@ -36,8 +36,7 @@ float Thermometer::getTemperature()
 	//wait for conversion
 	do 
 	{
-		if ((config = this->readByteFromRegistry(ACCESS_CONFIG)) < 0)
-			return -1;
+		config = this->readByteFromRegistry(ACCESS_CONFIG);
 	} while ((config & DONE) == 0);
 	//read temperature
 	uint8_t value = this->readByteFromRegistry(READ_TEMPERATURE);

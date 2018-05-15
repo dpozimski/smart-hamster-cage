@@ -20,15 +20,6 @@
 #include "Flow/FanController.h"
 #include "Flow/FoodFeedController.h"
 
-uint8_t getPwmValueFromTemperature(uint8_t vale)
-{
-    int16_t y2 = 255, y1 = 50;
-    int16_t x2 = 30, x1 = 26;
-    //linear function
-    uint8_t y = ( ((y2 - y1)/(x2 - x1)) * vale ) + ( ((x2 * y1) - (x1 * y2)) / (x2 - x1) );
-    return y;
-}
-
 int main(void)
 {
     //enable interrupts
@@ -59,6 +50,9 @@ int main(void)
 	FanController fanController(&fan);
 	FoodFeedController foodFeedController(&stepperMotor, &foodFeedTimeRule);
 	WaterFeedController waterFeedController(&waterPump, &waterFeedTimeRule);
+    
+    //signal
+    controlLed.signal();
     
 	while(true)
 	{  
