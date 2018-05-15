@@ -40,14 +40,14 @@ int main(void)
 	ControlLed controlLed;
 	StepperMotor stepperMotor;
 	Thermometer thermometer;
-	//OLEDScreen oledScreen;
+	OLEDScreen oledScreen;
     Timer timer;
     timer.init();
 	fan.init();
 	waterPump.init();
 	controlLed.init();
 	stepperMotor.init();
-	//oledScreen.init();
+	oledScreen.init();
 	thermometer.init();
     
     //Rule objects
@@ -55,7 +55,7 @@ int main(void)
     OutputTimeRule foodFeedTimeRule;
 	
 	//Flow objects
-	//UIController uiController(&oledScreen);
+	UIController uiController(&oledScreen);
 	FanController fanController(&fan);
 	FoodFeedController foodFeedController(&stepperMotor, &foodFeedTimeRule);
 	WaterFeedController waterFeedController(&waterPump, &waterFeedTimeRule);
@@ -69,11 +69,11 @@ int main(void)
         //set updated values
         fanController.setTemperature(temperature);
         waterFeedController.setTemperature(temperature);
-        //uiController.setTemperature(temperature);
+        uiController.setTemperature(temperature);
         fanController.setElapsedSeconds(elapsedSeconds);
         waterFeedController.setElapsedSeconds(elapsedSeconds);
         foodFeedController.setElapsedSeconds(elapsedSeconds);
-        //uiController.setElapsedSeconds(elapsedSeconds);
+        uiController.setElapsedSeconds(elapsedSeconds);
         
         //output devices work
         fanController.update();
@@ -81,11 +81,11 @@ int main(void)
         foodFeedController.update();
         
         //ui
-        //uiController.isControlLedActive(controlLed.readValue());
-        //uiController.isFanWorking(fan.readValue());
-        //uiController.isStepperMotorWorking(stepperMotor.readSpeed());
-        //uiController.isWaterPumpWorking(waterPump.readValue());
-        //uiController.update();
+        uiController.setElapsedSeconds(elapsedSeconds);
+        uiController.setFanSpeed(fan.readValue());
+        uiController.setStepperMotorSpeed(stepperMotor.readSpeed());
+        uiController.setWaterPumpPower(waterPump.readValue());
+        uiController.update();
 	}
 }
 

@@ -190,19 +190,28 @@
     <Compile Include="Devices\I2C\Lib\i2c_master.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Devices\I2C\OLED\OLED_Fonts.h">
+    <Compile Include="Devices\I2C\OLED\mk_oled\mk_fx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\mk_oled\mk_fx.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\mk_oled\mk_graphic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\mk_oled\mk_ssd1306.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\mk_oled\mk_ssd1306.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Devices\I2C\OLED\mk_oled\oled_font_PL.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Devices\I2C\OLED\OLED_Screen.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Devices\I2C\OLED\OLED_Screen.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Devices\I2C\OLED\SSD1306_Adapter.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Devices\I2C\OLED\SSD1306_Adapter.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Devices\I2C\Thermometer.cpp">
@@ -301,6 +310,7 @@
     <Folder Include="Devices" />
     <Folder Include="Devices\I2C\Lib" />
     <Folder Include="Devices\I2C\OLED" />
+    <Folder Include="Devices\I2C\OLED\mk_oled" />
     <Folder Include="Devices\PWM" />
     <Folder Include="Flow" />
     <Folder Include="Utils" />
