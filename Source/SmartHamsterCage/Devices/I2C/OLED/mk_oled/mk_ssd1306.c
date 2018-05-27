@@ -104,29 +104,21 @@ void ssd1306_InitSpi(void) {
 //***************************************** I2C
 #if USE_SPI_OR_I2C == 0  || USE_SPI_OR_I2C == 3
 
-static void TWI_start(void) {
-	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTA);
-	while (!(TWCR&(1<<TWINT)));
+static void TWI_start(uint8_t SLA) {
+	i2c_start(SLA);
 }
 
 static void TWI_stop(void) {
-	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTO);
-	while ( (TWCR&(1<<TWSTO)) );
+	i2c_stop();
 }
 
 static void TWI_write(uint8_t bajt) {
-	TWDR = bajt;
-	TWCR = (1<<TWINT)|(1<<TWEN);
-	while ( !(TWCR&(1<<TWINT)));
+    i2c_write(bajt);
 }
 
-static void TWI_write_buf( uint8_t SLA, uint8_t adr, uint16_t len, uint8_t *buf ) {
-
-	TWI_start();
-	TWI_write(SLA);
-	TWI_write(adr);
-	while (len--) TWI_write(*buf++);
-	TWI_stop();
+static void TWI_write_buf( uint8_t SLA, uint8_t adr, uint16_t len, uint8_t *buf ) 
+{
+	i2c_writeReg(SLA, adr, buf, len);
 }
 
 #endif
@@ -176,8 +168,7 @@ void mk_ssd1306_cmd( uint8_t cmd ) {
 #if USE_SPI_OR_I2C == 0 || USE_SPI_OR_I2C == 3
 
     uint8_t control = 0x00;
-    TWI_start();
-    TWI_write( OLED_I2C_ADDRESS );
+    TWI_start(OLED_I2C_ADDRESS);
     TWI_write( control );
     TWI_write( cmd );
     TWI_stop();
@@ -228,8 +219,7 @@ void mk_ssd1306_data( uint8_t dat ) {
 #if USE_SPI_OR_I2C == 0 || USE_SPI_OR_I2C == 3
 
     uint8_t control = 0x40;
-    TWI_start();
-    TWI_write( OLED_I2C_ADDRESS );
+    TWI_start(OLED_I2C_ADDRESS);
     TWI_write( control );
     TWI_write( dat );
     TWI_stop();
