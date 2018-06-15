@@ -5,9 +5,9 @@
  *  Author: d.pozimski
  */ 
 
-#define ROTATE_PWM_VALUE 100
+#define ROTATE_PWM_VALUE 255
 #define FEED_CYCLIC_DURATION 150
-#define FEED_DURATION 3
+#define FEED_DURATION 20
 
 #include "FoodFeedController.h"
 
@@ -17,8 +17,8 @@ FoodFeedController::FoodFeedController(StepperMotor* stepperMotor, OutputTimeRul
     this->stepperMotor = stepperMotor;
     this->stepperMotor->setEnabled(false);
     this->stepperMotor->setSpeed(0);
-    this->stepperMotor->setSpeedMode(StepperMotorSpeedMode::HALF);
-    this->stepperMotor->setDirection(StepperMotorDirection::RIGHT);
+    this->stepperMotor->setSpeedMode(StepperMotorSpeedMode::FULL);
+    this->stepperMotor->setDirection(StepperMotorDirection::LEFT);
 }
 
 void FoodFeedController::update()
