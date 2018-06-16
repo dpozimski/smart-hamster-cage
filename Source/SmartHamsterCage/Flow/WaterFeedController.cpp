@@ -5,13 +5,13 @@
  *  Author: d.pozimski
  */ 
 
-#define POUR_PWM_VALUE 20
+#define POUR_PWM_VALUE 28
 #define TEMP_EXCEEDED_VALUE 32
 
 #define POUR_CYCLIC_DURATION 175
 #define POUR_CYCLIC_DURATION_IF_TEMP_EXCEEDED 110
 
-#define POUR_DURATION 3
+#define POUR_DURATION 6
 
 #include "WaterFeedController.h"
 

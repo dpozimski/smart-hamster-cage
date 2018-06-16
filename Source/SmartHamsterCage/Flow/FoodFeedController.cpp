@@ -7,7 +7,7 @@
 
 #define ROTATE_PWM_VALUE 255
 #define FEED_CYCLIC_DURATION 150
-#define FEED_DURATION 20
+#define FEED_DURATION 45
 
 #include "FoodFeedController.h"
 

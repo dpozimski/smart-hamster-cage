@@ -56,12 +56,11 @@ void OLEDScreen::drawText(uint8_t x, uint8_t y, char* text)
 {
     y += TITLE_OFFSET_Y;
     uint8_t lineHeight = 1;
-
     uint8_t line = 0;
     char* textPart = strtok(text, "\n");
     while (textPart != NULL) {
         mk_ssd1306_puts(x, y, textPart, lineHeight, 1, 1);
-        line ++;
+        line++;
         y += (line * lineHeight) + 6;
         textPart = strtok(NULL, "\n");
     }
