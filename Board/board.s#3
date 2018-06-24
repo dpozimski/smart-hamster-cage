@@ -17343,7 +17343,6 @@ manufacturer Siemens</description>
 <part name="SUPPLY12" library="supply2" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="VCC" device=""/>
 <part name="S1" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="C5" library="rcl" deviceset="C-EU" device="025-025X050" value="100nF"/>
 <part name="X1" library="con-ptr500" deviceset="AK500/2" device="" value="WATER_PUMP"/>
 <part name="SUPPLY14" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY15" library="supply2" deviceset="GND" device=""/>
@@ -17448,7 +17447,6 @@ manufacturer Siemens</description>
 <instance part="SUPPLY12" gate="GND" x="-121.92" y="53.34"/>
 <instance part="P+6" gate="VCC" x="-121.92" y="104.14"/>
 <instance part="S1" gate="1" x="-121.92" y="71.12"/>
-<instance part="C5" gate="G$1" x="-137.16" y="71.12"/>
 <instance part="X1" gate="-1" x="391.16" y="-86.36" rot="R180"/>
 <instance part="X1" gate="-2" x="391.16" y="-81.28" rot="R180"/>
 <instance part="SUPPLY14" gate="GND" x="149.86" y="-198.12"/>
@@ -17671,15 +17669,10 @@ manufacturer Siemens</description>
 <segment>
 <pinref part="SUPPLY12" gate="GND" pin="GND"/>
 <pinref part="S1" gate="1" pin="P"/>
-<wire x1="-121.92" y1="55.88" x2="-121.92" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="S1" gate="1" pin="P1"/>
-<wire x1="-121.92" y1="58.42" x2="-121.92" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-121.92" y1="55.88" x2="-121.92" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-119.38" y1="66.04" x2="-121.92" y2="66.04" width="0.1524" layer="91"/>
 <junction x="-121.92" y="66.04"/>
-<pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="-137.16" y1="66.04" x2="-137.16" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="-137.16" y1="58.42" x2="-121.92" y2="58.42" width="0.1524" layer="91"/>
-<junction x="-121.92" y="58.42"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="L297" pin="CNTL"/>
@@ -17971,10 +17964,7 @@ manufacturer Siemens</description>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="-121.92" y1="83.82" x2="-121.92" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-121.92" y="76.2"/>
-<pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="-121.92" y1="81.28" x2="-121.92" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-137.16" y1="73.66" x2="-137.16" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="-137.16" y1="81.28" x2="-121.92" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-121.92" y="81.28"/>
 <wire x1="-121.92" y1="81.28" x2="-81.28" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="RESET"/>
