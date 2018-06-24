@@ -1,7 +1,6 @@
 [Eagle]
-Version="07 06 00"
+Version="09 00 00"
 Platform="Windows"
-Serial="62191E841E-LSR-WLM-1EL"
 Globals="Globals"
 Desktop="Desktop"
 
@@ -19,10 +18,8 @@ UsedLibrary="Libs/inductors.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="0 0 1919 1000"
-State=3
 Number=0
 
 [Desktop]
-Screen="5760 1538"
+Screen="1920 1080"
 Window="Win_1"

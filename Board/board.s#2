@@ -17343,7 +17343,6 @@ manufacturer Siemens</description>
 <part name="SUPPLY12" library="supply2" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="VCC" device=""/>
 <part name="S1" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="C5" library="rcl" deviceset="C-EU" device="025-025X050" value="100nF"/>
 <part name="X1" library="con-ptr500" deviceset="AK500/2" device="" value="WATER_PUMP"/>
 <part name="SUPPLY14" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY15" library="supply2" deviceset="GND" device=""/>
@@ -17448,7 +17447,6 @@ manufacturer Siemens</description>
 <instance part="SUPPLY12" gate="GND" x="-121.92" y="53.34"/>
 <instance part="P+6" gate="VCC" x="-121.92" y="104.14"/>
 <instance part="S1" gate="1" x="-121.92" y="71.12"/>
-<instance part="C5" gate="G$1" x="-137.16" y="71.12"/>
 <instance part="X1" gate="-1" x="391.16" y="-86.36" rot="R180"/>
 <instance part="X1" gate="-2" x="391.16" y="-81.28" rot="R180"/>
 <instance part="SUPPLY14" gate="GND" x="149.86" y="-198.12"/>
@@ -17671,15 +17669,10 @@ manufacturer Siemens</description>
 <segment>
 <pinref part="SUPPLY12" gate="GND" pin="GND"/>
 <pinref part="S1" gate="1" pin="P"/>
-<wire x1="-121.92" y1="55.88" x2="-121.92" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="S1" gate="1" pin="P1"/>
-<wire x1="-121.92" y1="58.42" x2="-121.92" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-121.92" y1="55.88" x2="-121.92" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="-119.38" y1="66.04" x2="-121.92" y2="66.04" width="0.1524" layer="91"/>
 <junction x="-121.92" y="66.04"/>
-<pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="-137.16" y1="66.04" x2="-137.16" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="-137.16" y1="58.42" x2="-121.92" y2="58.42" width="0.1524" layer="91"/>
-<junction x="-121.92" y="58.42"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="L297" pin="CNTL"/>
@@ -17847,14 +17840,10 @@ manufacturer Siemens</description>
 <pinref part="IC2" gate="G$1" pin="VCC"/>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 <wire x1="-76.2" y1="25.4" x2="-88.9" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="-88.9" y1="25.4" x2="-88.9" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="25.4" x2="-88.9" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="-88.9" y1="35.56" x2="-88.9" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-88.9" y1="25.4" x2="-88.9" y2="22.86" width="0.1524" layer="91"/>
 <junction x="-88.9" y="25.4"/>
-<pinref part="IC2" gate="G$1" pin="AREF"/>
-<wire x1="-76.2" y1="35.56" x2="-88.9" y2="35.56" width="0.1524" layer="91"/>
-<junction x="-88.9" y="35.56"/>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="AVCC"/>
@@ -17975,10 +17964,7 @@ manufacturer Siemens</description>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="-121.92" y1="83.82" x2="-121.92" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-121.92" y="76.2"/>
-<pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="-121.92" y1="81.28" x2="-121.92" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="-137.16" y1="73.66" x2="-137.16" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="-137.16" y1="81.28" x2="-121.92" y2="81.28" width="0.1524" layer="91"/>
 <junction x="-121.92" y="81.28"/>
 <wire x1="-121.92" y1="81.28" x2="-81.28" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="RESET"/>
@@ -18321,25 +18307,25 @@ manufacturer Siemens</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="101,1,474.98,20.32,X2-2,KL,,,,"/>
+<approved hash="101,1,386.08,20.32,X2-2,KL,,,,"/>
 <approved hash="104,1,-76.2,30.48,IC2,AGND,GND,,,"/>
 <approved hash="104,1,-76.2,33.02,IC2,AVCC,VCC,,,"/>
-<approved hash="104,1,-76.2,35.56,IC2,AREF,VCC,,,"/>
+<approved hash="204,1,-76.2,35.56,IC2,AREF,,,,"/>
 <approved hash="104,1,251.46,-152.4,IC3,VS,VSS,,,"/>
 <approved hash="104,1,-162.56,-127,U2,VDD,VCC,,,"/>
 <approved hash="206,1,139.7,-172.72,GND,,,,,"/>
 <approved hash="206,1,139.7,-167.64,GND,,,,,"/>
 <approved hash="208,1,-58.42,106.68,GND,sup,,,,"/>
-<approved hash="208,1,81.28,127,GND,sup,,,,"/>
-<approved hash="208,1,106.68,127,GND,sup,,,,"/>
-<approved hash="208,1,58.42,127,GND,sup,,,,"/>
+<approved hash="208,1,33.02,104.14,GND,sup,,,,"/>
+<approved hash="208,1,58.42,104.14,GND,sup,,,,"/>
+<approved hash="208,1,10.16,104.14,GND,sup,,,,"/>
 <approved hash="208,1,-88.9,15.24,GND,sup,,,,"/>
 <approved hash="208,1,-99.06,15.24,GND,sup,,,,"/>
 <approved hash="208,1,-81.28,15.24,GND,sup,,,,"/>
-<approved hash="208,1,497.84,48.26,GND,sup,,,,"/>
-<approved hash="208,1,43.18,127,GND,sup,,,,"/>
+<approved hash="208,1,408.94,48.26,GND,sup,,,,"/>
+<approved hash="208,1,-5.08,104.14,GND,sup,,,,"/>
 <approved hash="208,1,-81.28,-106.68,GND,sup,,,,"/>
-<approved hash="208,1,436.88,-40.64,GND,sup,,,,"/>
+<approved hash="208,1,347.98,-40.64,GND,sup,,,,"/>
 <approved hash="208,1,-121.92,55.88,GND,sup,,,,"/>
 <approved hash="208,1,149.86,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,139.7,-172.72,GND,out,,,,"/>
@@ -18350,24 +18336,24 @@ manufacturer Siemens</description>
 <approved hash="208,1,-185.42,-144.78,GND,sup,,,,"/>
 <approved hash="208,1,215.9,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,256.54,-195.58,GND,sup,,,,"/>
-<approved hash="208,1,436.88,-144.78,GND,sup,,,,"/>
+<approved hash="208,1,347.98,-144.78,GND,sup,,,,"/>
 <approved hash="208,1,264.16,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,274.32,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,284.48,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,294.64,-195.58,GND,sup,,,,"/>
 <approved hash="208,1,241.3,-134.62,GND,sup,,,,"/>
 <approved hash="208,1,-73.66,-106.68,GND,sup,,,,"/>
-<approved hash="208,1,457.2,-144.78,GND,sup,,,,"/>
-<approved hash="208,1,457.2,-40.64,GND,sup,,,,"/>
+<approved hash="208,1,368.3,-144.78,GND,sup,,,,"/>
+<approved hash="208,1,368.3,-40.64,GND,sup,,,,"/>
 <approved hash="208,1,12.7,-40.64,GND,sup,,,,"/>
 <approved hash="208,1,-45.72,106.68,GND,sup,,,,"/>
 <approved hash="208,1,-104.14,-144.78,GND,sup,,,,"/>
-<approved hash="113,1,58.42,144.441,LM2596,,,,,"/>
-<approved hash="113,1,482.6,59.4953,KANDA,,,,,"/>
+<approved hash="113,1,10.16,121.581,LM2596,,,,,"/>
+<approved hash="113,1,393.7,59.4953,KANDA,,,,,"/>
 <approved hash="113,1,-108.569,-83.6253,OLED_SSD3306_CON,,,,,"/>
 <approved hash="113,1,-124.071,71.12,S1,,,,,"/>
-<approved hash="113,1,457.522,-133.35,WP_LED,,,,,"/>
-<approved hash="113,1,457.522,-31.75,FAN_LED,,,,,"/>
+<approved hash="113,1,368.622,-133.35,WP_LED,,,,,"/>
+<approved hash="113,1,368.622,-31.75,FAN_LED,,,,,"/>
 <approved hash="113,1,13.0217,-28.7956,CTRL_LED,,,,,"/>
 <approved hash="113,1,-45.3983,115.57,VSS_LED,,,,,"/>
 </errors>
