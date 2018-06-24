@@ -1,29 +1,23 @@
 /*
- * SSD1306.h
+ * SSD1306_Adapter.h
  *
- * Created: 15.04.2018 20:27:56
+ * Created: 15.05.2018 19:46:49
  *  Author: d.pozimski
  */ 
 
 
-#ifndef SSD1306ADAPTER_H_
-#define SSD1306ADAPTER_H_
+#ifndef SSD1306_ADAPTER_H_
+#define SSD1306_ADAPTER_H_
 
-#include "./../I2CDevice.h"
 
-#define SSD1306_WIDTH 128
-#define SSD1306_HEIGHT 64
-#define SSD1306_BUFFERSIZE (SSD1306_WIDTH*SSD1306_HEIGHT) / 8
-
-class SSD1306Adapter : public I2CDevice
+class SSD1306Adapter : public Device
 {
-	public:
-		SSD1306Adapter();
-		void init() override;
-		void sendFramebuffer(uint8_t *buffer);
-	private:
-		void sendCommand(uint8_t command);
+    public:
+        SSD1306Adapter();
+        void init() override;    
+    
 };
 
 
-#endif /* SSD1306ADAPTER_H_ */
+
+#endif /* SSD1306_ADAPTER_H_ */

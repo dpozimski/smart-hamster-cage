@@ -8,7 +8,7 @@
 #include "I2CDevice.h"
 
 #include "./../../Utils/GlobalDefs.h"
-#include <util/delay.h>
+#include "./../ControlLed.h"
 
 extern "C" {
     #include "./Lib/i2c_master.h"
@@ -26,6 +26,7 @@ void I2CDevice::init()
     if(!this->busInitialized)
     {
         i2c_init();
+        
         this->busInitialized = true;
     }
 }

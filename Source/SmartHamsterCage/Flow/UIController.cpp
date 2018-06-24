@@ -20,24 +20,19 @@ void UIController::setTemperature(uint8_t value)
 	this->temperature = value;
 }
 
-void UIController::isFanWorking(bool value)
+void UIController::setFanSpeed(uint8_t value)
 {
-	this->fanWorking = value;
+	this->fanSpeed = value;
 }
 
-void UIController::isWaterPumpWorking(bool value)
+void UIController::setWaterPumpPower(uint8_t value)
 {
-	this->waterPumpWorking = value;
+	this->waterPumpPower = value;
 }
 
-void UIController::isControlLedActive(bool value)
+void UIController::setStepperMotorSpeed(uint8_t value)
 {
-	this->controlLedActive = value;
-}
-
-void UIController::isStepperMotorWorking(bool value)
-{
-	this->stepperMotorWorking = value;
+	this->stepperMotorSpeed = value;
 }
 
 void UIController::update()
@@ -45,11 +40,23 @@ void UIController::update()
     //clear buffers
 	this->view->clearBuffer(); 
     memset(this->buffer, 0, TEXT_BUFFER_SIZE);
+    //title
+    const char* titleText = "SMART Hamster Cage";
+    this->view->drawTitle(titleText);
     //place formatted text into the ready to go buffer
     sprintf(this->buffer, 
-        "Current temperature: %d\nFan: %d\nWater pump: %d\nControl led: %d\nStepper motor: %d\n",
-        this->temperature, this->fanWorking, this->waterPumpWorking, this->controlLedActive, this->stepperMotorWorking);
+        "Temperature: %dC\nFan: %d%%\nWater pump: %d%%\nStepper motor: %d%%\nElapsed time: %lus\n",
+        this->temperature, 
+        this->pwmToPercentValue(this->fanSpeed), 
+        this->pwmToPercentValue(this->waterPumpPower), 
+        this->pwmToPercentValue(this->stepperMotorSpeed),
+        this->getElapsedSeconds());
     //draw text
 	this->view->drawText(0, 0, this->buffer);
 	this->view->flush();
+}
+
+uint8_t UIController::pwmToPercentValue(uint8_t pwmValue)
+{
+    return (pwmValue * 100) / 255;
 }
