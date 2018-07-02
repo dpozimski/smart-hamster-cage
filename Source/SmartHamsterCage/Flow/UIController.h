@@ -19,10 +19,16 @@ class UIController : public Controller
 {
 	public:
 		UIController(OLEDScreen* view);
+        /************************************************************************/
+        /* Sets the current temperature                                         */
+        /************************************************************************/
 		void setTemperature(uint8_t value);
 		void setFanSpeed(uint8_t value);
 		void setWaterPumpPower(uint8_t value);
 		void setStepperMotorSpeed(uint8_t value);
+        /************************************************************************/
+        /* Updates the current state of the controller                          */
+        /************************************************************************/
 		void update() override;
 	private:
         uint8_t pwmToPercentValue(uint8_t pwmValue);

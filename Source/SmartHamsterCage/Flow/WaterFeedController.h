@@ -16,10 +16,23 @@
 class WaterFeedController : public Controller
 {
 	public:
+        /************************************************************************/
+        /* Constructs a water feed controller using water pump device           */
+        /* and the output time rule handler                                     */
+        /************************************************************************/
 		WaterFeedController(WaterPump* waterPump, OutputTimeRule* outputTimeRule);
+        /************************************************************************/
+        /* Updates the current state of the controller                          */
+        /************************************************************************/
         void update() override;
+        /************************************************************************/
+        /* Sets the current temperature                                         */
+        /************************************************************************/
         void setTemperature(uint8_t temperature);
 	private:
+        /************************************************************************/
+        /* Get the idle time of the device depends of temperature               */
+        /************************************************************************/
         uint8_t getIdleTime(uint32_t elapsedSeconds);
         uint8_t temperature = 0;
 		WaterPump* waterPump;

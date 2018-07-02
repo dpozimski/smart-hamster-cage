@@ -14,8 +14,14 @@
 class Fan : public PWMDevice
 {
     public:
+        /************************************************************************/
+        /* Initializes fan control by setting the timer 1b to inverted pwm mode */
+        /************************************************************************/
         void init() override;
     protected:
+        /************************************************************************/
+        /* Sets the PWM value of the timer - physically it sets the speed       */
+        /************************************************************************/
         void updatePwmRegister(uint8_t value) override;
 };
 

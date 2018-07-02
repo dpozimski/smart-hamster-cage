@@ -13,9 +13,18 @@
 class Controller
 {
     public:
+        /************************************************************************/
+        /* Updates the current state of the controller                          */
+        /************************************************************************/
         virtual void update();
+        /************************************************************************/
+        /* Sets the elapsed seconds since program start                         */
+        /************************************************************************/
         void setElapsedSeconds(uint32_t elapsedSeconds);
     protected:
+        /************************************************************************/
+        /* Gets the elapsed seconds since program start                         */
+        /************************************************************************/
         uint32_t getElapsedSeconds();
     private:
         uint32_t elapsedSeconds = 0;

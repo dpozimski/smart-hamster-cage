@@ -17,7 +17,14 @@
 class FoodFeedController : public Controller
 {
 	public:
+        /************************************************************************/
+        /* Constructs a food feed controller using stepper motor                */
+        /* device and the output time rule handler                              */
+        /************************************************************************/
 		FoodFeedController(StepperMotor* stepperMotor, OutputTimeRule* outputTimeRule);
+        /************************************************************************/
+        /* Updates the current state of the controller                          */
+        /************************************************************************/
         void update() override;
 	private:
 		StepperMotor* stepperMotor;

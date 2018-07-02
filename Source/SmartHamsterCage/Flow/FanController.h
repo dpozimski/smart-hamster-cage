@@ -15,10 +15,22 @@
 class FanController : public Controller
 {
 	public:
+        /************************************************************************/
+        /* Constructs a fan controller using fan device                         */
+        /************************************************************************/
 		FanController(Fan* fan);
+        /************************************************************************/
+        /* Updates the current state of the controller                          */
+        /************************************************************************/
         void update() override;
+        /************************************************************************/
+        /* Sets the current temperature                                         */
+        /************************************************************************/
         void setTemperature(uint8_t temperature);
 	private:
+        /************************************************************************/
+        /* Calculates the pwm value using current temperature                   */
+        /************************************************************************/
         uint8_t getPwmValueFromTemperature();
 		Fan* fan;
         uint32_t lastExceededTimeStamp = 0;

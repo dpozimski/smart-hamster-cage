@@ -14,8 +14,14 @@
 class WaterPump : public PWMDevice
 {
     public:
+        /************************************************************************/
+        /* Initializes the clock of stepper motor device                        */
+        /************************************************************************/
         void init() override;
     protected:
+        /************************************************************************/
+        /* Updates the pwm register with value                                  */
+        /************************************************************************/
         void updatePwmRegister(uint8_t value) override;
 };
 

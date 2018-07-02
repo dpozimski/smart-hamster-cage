@@ -12,10 +12,21 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+/************************************************************************/
+/* The helper class for controlling the enable/disable state            */
+/* depends of the on/off parameter and the elapsed time                 */
+/************************************************************************/
 class OutputTimeRule
 {
     public:
+        /************************************************************************/
+        /* Checks for the new result of the isOutputShouldBeEnabled method      */
+        /************************************************************************/
         void update(uint32_t elapsedSeconds, uint16_t onDuration, uint16_t offDuration);
+        /************************************************************************/
+        /* Returns the indicator that the rules given from update are           */
+        /* accepted to enable or disable the output                             */
+        /************************************************************************/
         bool isOutputShouldBeEnabled();
     private:
         bool shouldBeEnabled = false;
